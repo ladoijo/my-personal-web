@@ -3,6 +3,7 @@ import { fileURLToPath } from 'url';
 import { FlatCompat } from '@eslint/eslintrc';
 import eslintParserTypeScript from '@typescript-eslint/parser';
 import eslintPluginBetterTailwindcss from 'eslint-plugin-better-tailwindcss';
+import eslintPluginValidateFilename from 'eslint-plugin-validate-filename';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -33,7 +34,8 @@ const eslintConfig = [
       }
     },
     plugins: {
-      'better-tailwindcss': eslintPluginBetterTailwindcss
+      'better-tailwindcss': eslintPluginBetterTailwindcss,
+      'validate-filename': eslintPluginValidateFilename
     },
     rules: {
       // enable all recommended rules to report a warning
@@ -42,7 +44,28 @@ const eslintConfig = [
       ...eslintPluginBetterTailwindcss.configs['recommended-error'].rules,
 
       // or configure rules individually
-      'better-tailwindcss/enforce-consistent-line-wrapping': ['warn', { printWidth: 100 }]
+      'better-tailwindcss/enforce-consistent-line-wrapping': ['warn', { printWidth: 100 }],
+      'validate-filename/validate-filename': [
+        'error',
+        {
+          rules: [
+            {
+              case: 'pascal',
+              target: '**/components/**'
+            },
+            {
+              case: 'kebab',
+              target: '**/app/**',
+              patterns: '^(page|layout|loading|error|not-found|route|template).tsx$'
+            },
+            {
+              case: 'camel',
+              target: '**/hooks/**',
+              patterns: '^use'
+            }
+          ]
+        }
+      ]
     },
     settings: {
       'better-tailwindcss': {
