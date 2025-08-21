@@ -3,7 +3,7 @@
 import Paper from '@/components/Paper';
 import Image from 'next/image';
 import { Typewriter } from 'react-simple-typewriter';
-import styles from './Home.module.css';
+import styles from './home.module.css';
 
 const jobOptions = [
   'Back End Developer',

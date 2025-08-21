@@ -123,31 +123,6 @@ const About = () => {
               </div>
             </div>
           </div>
-
-          {/* <div className={`group flex w-full flex-1 md:relative md:h-48 lg:h-full`}>
-            <div
-              className={`
-          top-0 left-0 z-0 flex h-48 w-full rotate-2 rounded-lg border border-gray-300 bg-white
-          transition-transform duration-300 ease-in-out
-          group-hover:scale-105 group-hover:rotate-[5deg] md:absolute
-              `}
-            ></div>
-            <div
-              className={`
-          z-1 flex h-48 w-full items-center justify-center rounded-lg border border-gray-300 bg-white
-          p-4 transition-transform duration-300 ease-in-out group-hover:scale-105
-          md:absolute
-              `}
-            >
-              <div className="flex h-full w-full flex-row space-x-2">
-                <div className="flex flex-1 flex-col items-center justify-center">
-                  <h3 className="text-5xl font-semibold md:text-8xl">{totalCompanies}</h3>
-                  <p className="text-sm text-gray-600 md:text-base">Companies</p>
-                </div>
-                <CompanyIcon className="flex h-12 w-12 flex-1 items-center justify-center text-gray-400 md:h-full md:w-full" />
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     </Paper>

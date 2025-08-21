@@ -1,8 +1,8 @@
-import Home from '@/sections/Home/Home';
-import About from '@/sections/About';
-import Resume from '@/sections/Resume';
-import Contact from '@/sections/Contact';
-import Portfolio from '@/sections/Portfolio';
+import Home from '@/sections/home';
+import About from '@/sections/about';
+import Resume from '@/sections/resume';
+import Contact from '@/sections/contact';
+import Portfolio from '@/sections/portfolio';
 
 export default function Page() {
   return (
