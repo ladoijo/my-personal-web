@@ -12,6 +12,7 @@ interface IAccountUrls {
     name: string;
     url: string;
     Icon: IconComponent;
+    placeholder?: string;
   };
 }
 
@@ -50,6 +51,7 @@ export const AccountUrls: IAccountUrls = {
     id: 'mail',
     name: 'Mail',
     url: 'mailto:hadyanputrayasrizal@gmail.com',
-    Icon: MailIcon
+    Icon: MailIcon,
+    placeholder: 'hadyanputrayasrizal@gmail.com'
   }
 };

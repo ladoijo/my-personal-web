@@ -22,67 +22,94 @@ const NavBar = () => {
       {/* Overlay */}
       {isNavOpen && (
         <div
-          className="bg-opacity-50 fixed inset-0 z-40 bg-black transition-opacity duration-300 lg:hidden"
+          className={`
+            fixed inset-0 z-40 bg-black opacity-50 transition-opacity duration-500
+            lg:hidden
+          `}
           onClick={toggleNav}
         />
       )}
 
       {/* Navbar */}
       <aside
-        className={`fixed top-0 left-0 z-40 h-full w-72 transform p-6 transition-transform duration-300 ease-in-out lg:translate-x-0 ${
-          isNavOpen ? 'translate-x-0' : '-translate-x-full'
-        }`}
+        className={`
+          fixed top-0 left-0 z-40 h-full w-full transform p-6 transition-transform duration-300 ease-in-out
+          sm:w-72
+          lg:translate-x-0
+          ${isNavOpen ? 'translate-x-0' : `-translate-x-full`}
+        `}
       >
-        <nav className="flex h-full flex-col rounded-xl bg-white shadow-xl">
-          <div className="px-5 pt-5 pb-3">
+        <nav className={`flex h-full flex-col rounded-xl bg-white shadow-xl`}>
+          <div className="relative px-5 pt-5 pb-3">
             <Image
               width={832}
               height={1216}
-              className="mx-auto h-40 w-40 rounded-full object-cover"
+              className={`mx-auto h-40 w-40 rounded-full object-cover`}
               src="/assets/images/me.webp"
               alt="Profile Picture"
             />
+            <span className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full border-2 border-white bg-green-600 px-3 py-1 text-xs font-semibold text-white shadow-lg">
+              #OPENTOWORK
+            </span>
           </div>
-          <span className="text-center text-gray-600">Hadyan Putra Yasrizal</span>
-          <div className="mx-5 my-3 flex flex-row divide-x divide-gray-300 rounded-lg border border-gray-300">
+          <span className={`text-center text-gray-600`}>Hadyan Putra Yasrizal</span>
+          <div
+            className={`
+              mx-5 my-3 flex flex-row divide-x divide-gray-300 rounded-lg border border-gray-300
+            `}
+          >
             <Link
               href={AccountUrls.whatsapp.url}
-              className="group flex flex-1 flex-col items-center p-2"
+              className={`group flex flex-1 flex-col items-center p-2`}
             >
               <AccountUrls.whatsapp.Icon
                 name={AccountUrls.whatsapp.name}
-                className="h-5 w-5 text-gray-400 group-hover:text-emerald-500"
+                className={`
+                  h-5 w-5 text-gray-400
+                  group-hover:text-emerald-500
+                `}
               />
             </Link>
             <Link
               href={AccountUrls.mail.url}
-              className="group flex flex-1 flex-col items-center p-2"
+              className={`group flex flex-1 flex-col items-center p-2`}
             >
               <AccountUrls.mail.Icon
                 name={AccountUrls.mail.name}
-                className="h-5 w-5 text-gray-400 group-hover:text-yellow-500"
+                className={`
+                  h-5 w-5 text-gray-400
+                  group-hover:text-yellow-500
+                `}
               />
             </Link>
             <Link
               href={AccountUrls.linkedin.url}
-              className="group flex flex-1 flex-col items-center p-2"
+              className={`group flex flex-1 flex-col items-center p-2`}
             >
               <AccountUrls.linkedin.Icon
                 name={AccountUrls.linkedin.name}
-                className="h-5 w-5 text-gray-400 transition-colors duration-300 group-hover:text-blue-500"
+                className={`
+                  h-5 w-5 text-gray-400 transition-colors duration-300
+                  group-hover:text-blue-500
+                `}
               />
             </Link>
             <Link
               href={AccountUrls.github.url}
-              className="group flex flex-1 flex-col items-center p-2"
+              className={`group flex flex-1 flex-col items-center p-2`}
             >
               <AccountUrls.github.Icon
                 name={AccountUrls.github.name}
-                className="h-5 w-5 text-gray-400 transition-colors duration-300 group-hover:text-black"
+                className={`
+                  h-5 w-5 text-gray-400 transition-colors duration-300
+                  group-hover:text-black
+                `}
               />
             </Link>
           </div>
-          <ul className="h-full content-center items-center divide-y divide-gray-300 overflow-y-auto">
+          <ul
+            className={`h-full content-center items-center divide-y divide-gray-300 overflow-y-auto`}
+          >
             {NavItems.map(({ id, label, icon: Icon }) => {
               return (
                 <li
@@ -91,15 +118,25 @@ const NavBar = () => {
                     setActiveSection(id);
                     toggleNav();
                   }}
-                  className={`flex flex-row items-center gap-2 space-x-3 rounded-sm px-5 py-3 hover:cursor-pointer hover:text-emerald-500 ${activeSection === id ? 'text-emerald-500' : 'text-gray-600'}`}
+                  className={`
+                    flex flex-row items-center gap-2 space-x-3 rounded-sm px-5 py-3
+                    hover:cursor-pointer hover:text-emerald-500
+                    ${activeSection === id ? `text-emerald-500` : `text-gray-600`}
+                  `}
                 >
-                  <Icon className="h-6 w-6 transition-colors duration-300" />
+                  <Icon className={`h-6 w-6 transition-colors duration-300`} />
                   <span>{label}</span>
                 </li>
               );
             })}
           </ul>
-          <button className="m-5 justify-center rounded-3xl border border-gray-300 p-2 text-gray-500 transition-colors duration-300 hover:cursor-pointer hover:bg-emerald-500 hover:text-white">
+          <button
+            className={`
+              m-5 justify-center rounded-3xl border border-gray-300 p-2 text-gray-500
+              transition-colors duration-300
+              hover:cursor-pointer hover:bg-emerald-500 hover:text-white
+            `}
+          >
             Download CV
           </button>
         </nav>
@@ -107,12 +144,22 @@ const NavBar = () => {
       {/* Burger Button */}
       <button
         onClick={toggleNav}
-        className={`relative top-4 z-50 flex h-10 w-10 flex-col items-center justify-center rounded-r-lg bg-white transition-all duration-300 ease-in-out hover:bg-gray-50 lg:hidden ${
-          isNavOpen ? 'left-56' : 'left-0'
-        }`}
+        className={`
+          fixed top-6 z-50 flex h-10 w-10 flex-col items-center justify-center rounded-r-lg
+          bg-white transition-all duration-250 ease-in-out
+          hover:bg-gray-50
+          lg:hidden
+          ${isNavOpen ? 'left-56' : 'left-0'}
+          shadow-lg
+        `}
+        style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.15)' }}
       >
         <ArrowIcon
-          className={`h-5 w-5 text-gray-600 ${isNavOpen ? 'rotate-180' : 'rotate-0'} transition-all duration-1000`}
+          className={`
+            h-5 w-5 text-gray-600
+            ${isNavOpen ? 'rotate-180' : `rotate-0`}
+            transition-all duration-1000
+          `}
         />
       </button>
     </>

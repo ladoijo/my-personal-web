@@ -5,15 +5,15 @@ interface IPaperProps {
 
 const Paper = ({ children, title }: IPaperProps) => {
   return (
-    <div className="rounded-xl bg-white p-8 shadow-xl">
+    <section className={`min-w-xs rounded-xl bg-white p-6 shadow-xl md:p-8`}>
       {!!title && (
         <>
-          <h1 className="text-5xl">{title}</h1>
+          <h1 className="text-2xl md:text-5xl">{title}</h1>
           <hr className="my-4 border-gray-300" />
         </>
       )}
       {children}
-    </div>
+    </section>
   );
 };
 

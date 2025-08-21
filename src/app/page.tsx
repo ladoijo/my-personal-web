@@ -7,7 +7,7 @@ import Portfolio from '@/sections/Portfolio';
 export default function Page() {
   return (
     <>
-      <div className="my-6 grid grid-cols-1 gap-y-6">
+      <div className={`my-6 flex w-fit flex-col space-y-6`}>
         <Home />
         <About />
         <Resume />

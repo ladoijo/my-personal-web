@@ -13,21 +13,13 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
-  ...compat.extends('next/core-web-vitals', 'next/typescript'),
-  'plugin:prettier/recommended',
+  ...compat.extends('next/core-web-vitals', 'next/typescript', 'plugin:prettier/recommended'),
   {
     files: ['**/*.{ts,tsx,cts,mts}'],
     languageOptions: {
       parser: eslintParserTypeScript,
       parserOptions: {
-        project: true
-      }
-    }
-  },
-  {
-    files: ['**/*.{jsx,tsx}'],
-    languageOptions: {
-      parserOptions: {
+        project: true,
         ecmaFeatures: {
           jsx: true
         }
@@ -40,12 +32,27 @@ const eslintConfig = [
     rules: {
       // enable all recommended rules to report a warning
       ...eslintPluginBetterTailwindcss.configs['recommended-warn'].rules,
-      // enable all recommended rules to report an error
       ...eslintPluginBetterTailwindcss.configs['recommended-error'].rules,
 
       // or configure rules individually
+      '@next/next/no-page-custom-font': 'off',
+      'react/no-unescaped-entities': [
+        'error',
+        {
+          forbid: [
+            {
+              char: '>',
+              alternatives: ['&gt;']
+            },
+            {
+              char: '}',
+              alternatives: ['&#125;']
+            }
+          ]
+        }
+      ],
       'better-tailwindcss/enforce-consistent-line-wrapping': ['warn', { printWidth: 100 }],
-      'validate-filename/validate-filename': [
+      'validate-filename/naming-rules': [
         'error',
         {
           rules: [
