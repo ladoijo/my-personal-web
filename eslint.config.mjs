@@ -35,11 +35,14 @@ const eslintConfig = [
       ...eslintPluginBetterTailwindcss.configs['recommended-error'].rules,
 
       // Auto-fix unused imports
-      '@typescript-eslint/no-unused-vars': ['error', { 
-        argsIgnorePattern: '^_',
-        varsIgnorePattern: '^_',
-        caughtErrorsIgnorePattern: '^_'
-      }],
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_'
+        }
+      ],
       'no-unused-vars': 'off', // Turn off base rule as it can report incorrect errors
 
       // or configure rules individually
@@ -84,8 +87,8 @@ const eslintConfig = [
     },
     settings: {
       'better-tailwindcss': {
-        // tailwindcss 4: the path to the entry file of the css based tailwind config (eg: `src/global.css`)
-        entryPoint: 'src/app/global.css',
+        // tailwindcss 4: the path to the entry file of the css based tailwind config (eg: `src/globals.css`)
+        entryPoint: 'src/app/globals.css',
         // tailwindcss 3: the path to the tailwind config file (eg: `tailwind.config.js`)
         tailwindConfig: 'tailwind.config.js'
       }

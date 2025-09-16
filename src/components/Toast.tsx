@@ -27,7 +27,10 @@ const Toast: React.FC<ToastProps> = ({ type, message, className, duration = 3000
   }, [duration, onClose]);
 
   const toastStyles = clsx(
-    'fixed right-4 bottom-4 z-50 mx-4 w-full max-w-sm sm:mx-0',
+    `
+      fixed right-4 bottom-4 z-50 mx-4 w-full max-w-sm
+      sm:mx-0
+    `,
     'rounded-lg p-4 shadow-xl',
     'transform transition-all duration-300 ease-in-out',
     {

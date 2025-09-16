@@ -1,6 +1,5 @@
 import Paper from '@/components/Paper';
 import { NavItems } from '@/constants/NavItemsConst';
-import Image from 'next/image';
 
 const Portfolio = () => {
   return <Paper id={NavItems[4].id} title="Portfolio" bgColor="#FFF5E9"></Paper>;

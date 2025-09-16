@@ -1,7 +1,6 @@
 import Accordion from '@/components/Accordion';
 import Chip from '@/components/Chip';
 import Paper from '@/components/Paper';
-import Title from '@/components/Title';
 import { Educations, WorkExperiences } from '@/constants/HistoriesConst';
 import { NavItems } from '@/constants/NavItemsConst';
 
@@ -23,15 +22,23 @@ const Resume = () => {
               {educationsSorted.map((ed) => (
                 <div key={ed.id} className="grid grid-rows-[max-content_1fr] items-center gap-0">
                   <div className="grid grid-cols-[200px_20px_auto] items-center gap-2">
-                    <b className="text-md text-right">{`${ed.start} - ${ed.end}`}</b>
+                    <b className="text-right">{`${ed.start} - ${ed.end}`}</b>
                     <div className="flex items-center justify-center">
-                      <span className="flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500/30">
-                        <span className="flex h-3 w-3 items-center justify-center rounded-full bg-emerald-500/50">
+                      <span
+                        className={`
+                          flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500/30
+                        `}
+                      >
+                        <span
+                          className={`
+                            flex h-3 w-3 items-center justify-center rounded-full bg-emerald-500/50
+                          `}
+                        >
                           <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
                         </span>
                       </span>
                     </div>
-                    <b className="text-md text-left font-bold">{ed.institution}</b>
+                    <b className="text-left font-bold">{ed.institution}</b>
                   </div>
                   <div className="grid grid-cols-[200px_20px_auto] items-center gap-2">
                     <i className="self-start pb-2 text-right">{ed.degree}</i>
@@ -56,15 +63,23 @@ const Resume = () => {
               {workExpSorted.map((we) => (
                 <div key={we.id} className="grid grid-rows-[max-content_1fr] items-center gap-0">
                   <div className="grid grid-cols-[200px_20px_auto] items-center gap-2">
-                    <b className="text-md text-right">{`${we.start} - ${we.end}`}</b>
+                    <b className="text-right">{`${we.start} - ${we.end}`}</b>
                     <div className="flex items-center justify-center">
-                      <span className="flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500/30">
-                        <span className="flex h-3 w-3 items-center justify-center rounded-full bg-emerald-500/50">
+                      <span
+                        className={`
+                          flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500/30
+                        `}
+                      >
+                        <span
+                          className={`
+                            flex h-3 w-3 items-center justify-center rounded-full bg-emerald-500/50
+                          `}
+                        >
                           <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
                         </span>
                       </span>
                     </div>
-                    <b className="text-md text-left font-bold">{we.company}</b>
+                    <b className="text-left font-bold">{we.company}</b>
                   </div>
                   <div className="grid grid-cols-[200px_20px_auto] items-center gap-2">
                     <i className="self-start pb-2 text-right">{we.position}</i>

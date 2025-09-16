@@ -47,7 +47,11 @@ const ContactLink = memo(
       >
         <Icon
           name={iconName}
-          className={`h-16 w-16 p-2 transition-colors duration-300 ${iconBgColor} ${iconTextColor}`}
+          className={`
+            h-16 w-16 p-2 transition-colors duration-300
+            ${iconBgColor}
+            ${iconTextColor}
+          `}
         />
         <div className={`flex flex-col p-2`}>
           <h3 className="font-bold">{title}</h3>

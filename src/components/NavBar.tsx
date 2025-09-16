@@ -2,33 +2,34 @@
 
 import { NavItem, NavItems } from '@/constants/NavItemsConst';
 import { AccountUrls } from '@/constants/UrlConst';
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
-import Arrow from '~/public/assets/icons/arrow_right.svg';
-import { IconComponent } from '@/types/icon';
 import Image from 'next/image';
+import Link from 'next/link';
+import { useCallback, useEffect, useState } from 'react';
 import Button from './Button';
 
 const NavBar = () => {
   const [activeSection, setActiveSection] = useState('');
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const ArrowIcon: IconComponent = Arrow;
 
-  const toggleNav = () => {
+  const toggleNav = useCallback(() => {
     setIsNavOpen(!isNavOpen);
-  };
+  }, [isNavOpen]);
 
-  const handleNavItemClick = (id: NavItem['id']) => {
-    setActiveSection(id);
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-    if (isNavOpen) toggleNav();
-  };
+  const handleNavItemClick = useCallback(
+    (id: NavItem['id']) => {
+      setActiveSection(id);
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+      if (isNavOpen) toggleNav();
+    },
+    [isNavOpen, toggleNav]
+  );
 
   useEffect(() => {
     const value = window.location.hash.startsWith('#')
       ? (window.location.hash.slice(1) as NavItem['id'])
       : (activeSection as NavItem['id']);
     handleNavItemClick(value);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -47,7 +48,10 @@ const NavBar = () => {
       {/* Navbar */}
       <aside
         className={`
-          fixed top-1/2 left-0 z-40 h-full w-full -translate-y-1/2 transform transition-transform duration-300 ease-in-out sm:w-60 lg:translate-x-0
+          fixed top-1/2 left-0 z-40 h-full w-full -translate-y-1/2 transform transition-transform
+          duration-300 ease-in-out
+          sm:w-60
+          lg:translate-x-0
           ${isNavOpen ? 'translate-x-0' : `-translate-x-full`}
         `}
       >
@@ -60,7 +64,12 @@ const NavBar = () => {
               src="/assets/images/me.webp"
               alt="Profile Picture"
             />
-            <span className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full border-2 border-white bg-teal-600 px-3 py-1 text-xs font-semibold text-white shadow-lg">
+            <span
+              className={`
+                absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full border-2 border-white
+                bg-teal-600 px-3 py-1 text-xs font-semibold text-white shadow-lg
+              `}
+            >
               #OPENTOWORK
             </span>
           </div>
@@ -72,7 +81,10 @@ const NavBar = () => {
           >
             <Link
               href={AccountUrls.whatsapp.url}
-              className={`group flex flex-1 flex-col items-center p-2 transition-colors duration-300 hover:bg-black`}
+              className={`
+                group flex flex-1 flex-col items-center p-2 transition-colors duration-300
+                hover:bg-black
+              `}
             >
               <AccountUrls.whatsapp.Icon
                 name={AccountUrls.whatsapp.name}
@@ -84,7 +96,10 @@ const NavBar = () => {
             </Link>
             <Link
               href={AccountUrls.mail.url}
-              className={`group flex flex-1 flex-col items-center p-2 transition-colors duration-300 hover:bg-black`}
+              className={`
+                group flex flex-1 flex-col items-center p-2 transition-colors duration-300
+                hover:bg-black
+              `}
             >
               <AccountUrls.mail.Icon
                 name={AccountUrls.mail.name}
@@ -96,7 +111,10 @@ const NavBar = () => {
             </Link>
             <Link
               href={AccountUrls.linkedin.url}
-              className={`group flex flex-1 flex-col items-center p-2 transition-colors duration-300 hover:bg-black`}
+              className={`
+                group flex flex-1 flex-col items-center p-2 transition-colors duration-300
+                hover:bg-black
+              `}
             >
               <AccountUrls.linkedin.Icon
                 name={AccountUrls.linkedin.name}
@@ -108,7 +126,10 @@ const NavBar = () => {
             </Link>
             <Link
               href={AccountUrls.github.url}
-              className={`group flex flex-1 flex-col items-center p-2 transition-colors duration-300 hover:bg-black`}
+              className={`
+                group flex flex-1 flex-col items-center p-2 transition-colors duration-300
+                hover:bg-black
+              `}
             >
               <AccountUrls.github.Icon
                 name={AccountUrls.github.name}
@@ -132,8 +153,9 @@ const NavBar = () => {
                     handleNavItemClick(id);
                   }}
                   className={`
-                    space-x-3-sm flex flex-row items-center gap-2 px-5 py-3
-                    transition-colors duration-300 hover:cursor-pointer hover:rounded-none hover:bg-teal-500 hover:text-white
+                    flex flex-row items-center gap-2 space-x-3 px-5 py-3 transition-colors
+                    duration-300
+                    hover:cursor-pointer hover:rounded-none hover:bg-teal-500 hover:text-white
                     ${activeSection === id ? `text-teal-500` : `text-black`}
                   `}
                 >
@@ -157,9 +179,8 @@ const NavBar = () => {
       <button
         onClick={toggleNav}
         className={`
-          fixed top-6 right-6 z-50 flex h-10 w-10 items-center justify-center rounded-full
-          bg-black shadow-lg transition-all duration-250
-          ease-in-out
+          fixed top-6 right-6 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-black
+          shadow-lg transition-all duration-250 ease-in-out
           hover:bg-gray-800
           lg:hidden
         `}
@@ -177,14 +198,16 @@ const NavBar = () => {
           {/* Middle bar */}
           <span
             className={`
-              absolute top-1/2 left-0 h-0.5 w-full -translate-y-1/2 bg-white transition-all duration-300
+              absolute top-1/2 left-0 h-0.5 w-full -translate-y-1/2 bg-white transition-all
+              duration-300
               ${isNavOpen ? 'scale-0 opacity-0' : 'scale-100 opacity-100'}
             `}
           />
           {/* Bottom bar */}
           <span
             className={`
-              absolute bottom-0 left-0 h-0.5 w-full origin-center bg-white transition-all duration-300
+              absolute bottom-0 left-0 h-0.5 w-full origin-center bg-white transition-all
+              duration-300
               ${isNavOpen ? '-translate-y-2 -rotate-45' : 'translate-y-0 rotate-0'}
             `}
           />

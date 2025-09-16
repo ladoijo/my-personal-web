@@ -30,7 +30,11 @@ const Photo = () => {
         width={988}
         src="/assets/images/me3.webp"
         alt="Profile"
-        className={`relative h-[26rem] w-fit rotate-3 rounded-md object-cover transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-0`}
+        className={`
+          relative h-[26rem] w-fit rotate-3 rounded-md object-cover transition-all duration-300
+          ease-in-out
+          hover:scale-110 hover:rotate-0
+        `}
       />
     </>
   );

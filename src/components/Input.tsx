@@ -123,6 +123,7 @@ const BaseInput = (
           onChange={onChange}
           disabled={disabled}
           className={fieldClassName}
+          autoComplete="on"
           ref={ref as React.Ref<HTMLInputElement>}
           {...props}
         />

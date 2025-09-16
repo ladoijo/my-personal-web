@@ -17,16 +17,48 @@ const jobOptions = [
 const Home = () => {
   return (
     <Paper id={NavItems[0].id} bgColor="#e3e3ff">
-      <div className={`flex flex-col space-y-8 md:flex-row md:space-x-8`}>
-        <div className="relative mx-auto w-full max-w-fit md:hidden">
+      <div
+        className={`
+          flex flex-col space-y-8
+          md:flex-row md:space-x-8
+        `}
+      >
+        <div
+          className={`
+            relative mx-auto w-full max-w-fit
+            md:hidden
+          `}
+        >
           <Photo />
         </div>
-        <div className="flex-col md:flex-2/3">
-          <h1 className="text-3xl text-black md:text-6xl">
+        <div
+          className={`
+            flex-col
+            md:flex-2/3
+          `}
+        >
+          <h1
+            className={`
+              text-3xl text-black
+              md:text-6xl
+            `}
+          >
             Hello There! <span className={styles.waveHand}>👋🏽</span>
           </h1>
-          <h1 className="text-4xl text-black md:text-8xl">I'm Hady</h1>
-          <h2 className="text-xl md:text-3xl">
+          <h1
+            className={`
+              text-4xl text-black
+              md:text-8xl
+            `}
+          >
+            I'm Hady
+          </h1>
+          <h2
+            className={`
+              text-xl
+              md:text-3xl
+            `}
+          >
             <span>
               I'm a{' '}
               <span className="text-teal-600">
@@ -56,7 +88,12 @@ const Home = () => {
             </Button>
           </div>
         </div>
-        <div className="relative hidden w-full max-w-fit md:block">
+        <div
+          className={`
+            relative hidden w-full max-w-fit
+            md:block
+          `}
+        >
           <Photo />
         </div>
       </div>

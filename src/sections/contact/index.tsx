@@ -61,7 +61,12 @@ const Contact = memo(() => {
 
   return (
     <Paper id={NavItems[5].id} title="Contact" className={styles.dotsBackground}>
-      <div className="flex flex-col gap-6 lg:flex-row lg:gap-10">
+      <div
+        className={`
+          flex flex-col gap-6
+          lg:flex-row lg:gap-10
+        `}
+      >
         {/* Contact Form Section */}
         <section className="flex flex-1 flex-col space-y-4">
           <header>
@@ -73,7 +78,12 @@ const Contact = memo(() => {
           </header>
 
           <form onSubmit={handleSubmit(handleSubmitForm)} className="flex flex-col space-y-4">
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div
+              className={`
+                grid grid-cols-1 gap-4
+                sm:grid-cols-2
+              `}
+            >
               <div className="flex flex-col">
                 <Input
                   title="Name"
@@ -162,7 +172,10 @@ const Contact = memo(() => {
             </div>
             <Button
               bgColor="#6880e5"
-              className="h-12 w-full sm:w-auto"
+              className={`
+                h-12 w-full
+                sm:w-auto
+              `}
               type="submit"
               disabled={isSubmitting}
             >
@@ -192,7 +205,10 @@ const Contact = memo(() => {
           <div className="relative">
             <iframe
               title="Google Map"
-              className="h-52 w-full rounded-md border sm:h-60"
+              className={`
+                h-52 w-full rounded-md border
+                sm:h-60
+              `}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               src="https://www.google.com/maps?q=-6.9175,107.6191&z=13&output=embed"
@@ -204,7 +220,12 @@ const Contact = memo(() => {
             {/* Direct Contact */}
             <section>
               <h2 className="mb-2 text-lg font-semibold text-black">Direct Contact</h2>
-              <div className="grid grid-cols-1 gap-3 xl:grid-cols-2">
+              <div
+                className={`
+                  grid grid-cols-1 gap-3
+                  xl:grid-cols-2
+                `}
+              >
                 <ContactLink
                   href={AccountUrls.mail.url}
                   icon={AccountUrls.mail.Icon}
@@ -227,7 +248,12 @@ const Contact = memo(() => {
             {/* Social Media */}
             <section>
               <h2 className="mb-2 text-lg font-semibold text-black">Social Media</h2>
-              <div className="grid grid-cols-1 gap-3 xl:grid-cols-2">
+              <div
+                className={`
+                  grid grid-cols-1 gap-3
+                  xl:grid-cols-2
+                `}
+              >
                 <ContactLink
                   href={AccountUrls.linkedin.url}
                   icon={AccountUrls.linkedin.Icon}
@@ -250,7 +276,12 @@ const Contact = memo(() => {
             {/* Freelance Platforms */}
             <section>
               <h2 className="mb-2 text-lg font-semibold text-black">Or Hire Me On</h2>
-              <div className="grid grid-cols-1 gap-3 xl:grid-cols-2">
+              <div
+                className={`
+                  grid grid-cols-1 gap-3
+                  xl:grid-cols-2
+                `}
+              >
                 <ContactLink
                   href={AccountUrls.upwork.url}
                   icon={AccountUrls.upwork.Icon}
