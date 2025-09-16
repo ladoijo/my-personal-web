@@ -8,13 +8,15 @@ type CommonProps = {
   title: string;
   inputSize?: 'sm' | 'md' | 'lg' | 'xl';
   placeholder: string;
-  value: string;
+  value?: string;
   onChange: (
     e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>
   ) => void;
   required: boolean;
   className?: string;
   id?: string;
+  error?: boolean;
+  disabled?: boolean;
 };
 
 type TextInputProps = CommonProps & {
@@ -63,6 +65,8 @@ const BaseInput = (
     required,
     className,
     id,
+    error = false,
+    disabled = false,
     ...props
   }: InputProps,
   ref: React.Ref<HTMLInputElement | HTMLTextAreaElement>
@@ -73,11 +77,20 @@ const BaseInput = (
   const fieldClassName = clsx(
     // shared visual styles
     'border-2 border-black bg-white',
-    'text-black shadow-[2px_2px_black] transition-all duration-300',
+    'text-black transition-all duration-300',
     // radius/size variants
     tvInput({ rounded: inputSize ?? 'sm', height: inputSize ?? 'sm' }),
-    // focus behavior (remove blue ring, keep black border)
-    'focus:border-black focus:shadow-[5px_5px_black] focus:ring-0 focus:outline-none',
+    // shadow colors based on state
+    {
+      'shadow-[2px_2px_#f87171]': error && !disabled,
+      'shadow-[2px_2px_black]': !error && !disabled,
+      'cursor-not-allowed border-gray-300 bg-gray-100 opacity-60 shadow-none': disabled
+    },
+    // focus behavior (remove blue ring, keep appropriate shadow)
+    {
+      'focus:shadow-[5px_5px_#f87171] focus:ring-0 focus:outline-none': error && !disabled,
+      'focus:shadow-[5px_5px_black] focus:ring-0 focus:outline-none': !error && !disabled
+    },
     // extra custom classes
     className
   );
@@ -96,7 +109,7 @@ const BaseInput = (
           value={value}
           rows={rows}
           onChange={onChange}
-          required={required}
+          disabled={disabled}
           className={fieldClassName}
           ref={ref as React.Ref<HTMLTextAreaElement>}
           {...(props as unknown as React.TextareaHTMLAttributes<HTMLTextAreaElement>)}
@@ -108,7 +121,7 @@ const BaseInput = (
           placeholder={placeholder}
           value={value}
           onChange={onChange}
-          required={required}
+          disabled={disabled}
           className={fieldClassName}
           ref={ref as React.Ref<HTMLInputElement>}
           {...props}

@@ -15,7 +15,7 @@ const Resume = () => {
   );
 
   return (
-    <Paper id={NavItems[2].id} title="Resume" bgColor="#FFF5E9">
+    <Paper id={NavItems[2].id} title="Resume" bgColor="#e3e3ff">
       <div className="flex flex-col space-y-3">
         <Accordion title="Education">
           <div className="my-3 flex flex-row">

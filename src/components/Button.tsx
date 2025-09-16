@@ -1,5 +1,5 @@
-import React from 'react';
 import clsx from 'clsx';
+import React from 'react';
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
@@ -12,6 +12,7 @@ const Button = ({
   onClick,
   bgColor = '#f0b21a',
   children,
+  disabled = false,
   ...props
 }: ButtonProps) => {
   return (
@@ -20,10 +21,14 @@ const Button = ({
       className={clsx(
         'group relative rounded-md border-2 border-black px-2 py-1 font-bold text-black',
         'bg-[var(--btn-bg)] shadow-[4px_4px_black] transition-all duration-300',
-        'hover:cursor-pointer hover:bg-black hover:text-white hover:shadow-[4px_4px_var(--btn-bg)]',
-        'active:transform-[translate(3px,3px)] active:shadow-none',
+        {
+          'hover:cursor-pointer hover:bg-black hover:text-white hover:shadow-[4px_4px_var(--btn-bg)] active:transform-[translate(3px,3px)] active:shadow-none':
+            !disabled,
+          'cursor-not-allowed opacity-60': disabled
+        },
         className
       )}
+      disabled={disabled}
       {...props}
     >
       {children}

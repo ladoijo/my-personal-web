@@ -1,10 +1,10 @@
 import Paper from '@/components/Paper';
 import { WorkExperiences } from '@/constants/HistoriesConst';
-import { useMemo } from 'react';
+import { NavItems } from '@/constants/NavItemsConst';
 import { IconComponent } from '@/types/icon';
+import { useMemo } from 'react';
 import company from '~/public/assets/icons/company.svg';
 import experience from '~/public/assets/icons/experience.svg';
-import { NavItems } from '@/constants/NavItemsConst';
 
 const About = () => {
   const CompanyIcon: IconComponent = company;
@@ -81,14 +81,14 @@ const About = () => {
             <div
               className={`
           h-48 w-full rotate-6 rounded-md border-2 border-black
-          bg-violet-100 transition-transform duration-300
+          bg-[#cdede9] transition-transform duration-300
           ease-in-out group-hover:scale-105 group-hover:rotate-12
               `}
             ></div>
             <div
               className={`
           absolute z-1 flex h-48 w-full items-center justify-center rounded-md border-2
-          border-black bg-violet-300 p-4 transition-transform duration-300
+          border-black bg-[#2dd4bf] p-4 transition-transform duration-300
           ease-in-out group-hover:scale-105
               `}
             >

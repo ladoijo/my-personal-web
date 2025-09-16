@@ -4,103 +4,60 @@ import Button from '@/components/Button';
 import Input from '@/components/Input';
 import Paper from '@/components/Paper';
 import Title from '@/components/Title';
+import Toast from '@/components/Toast';
 import { NavItems } from '@/constants/NavItemsConst';
 import { AccountUrls } from '@/constants/UrlConst';
-import Link from 'next/link';
-import { useState, memo, useCallback } from 'react';
+import { EmailFormData, emailService } from '@/utils/email';
+import { memo, useState } from 'react';
+import { useForm } from 'react-hook-form';
 import styles from './contact.module.css';
+import ContactLink from './ContactLink';
 
-type ContactMessage = {
-  name: string;
-  email: string;
-  subject: string;
+interface FormStatus {
+  type: 'success' | 'error' | null;
   message: string;
-};
-
-const INIT_CONTACT_MESSAGE: ContactMessage = {
-  name: '',
-  email: '',
-  subject: '',
-  message: ''
-};
-
-// Reusable ContactLink component
-interface ContactLinkProps {
-  href: string;
-  icon: React.ComponentType<{ name: string; className?: string }>;
-  iconName: string;
-  title: string;
-  description?: string;
-  iconBgColor: string;
-  iconTextColor?: string;
 }
 
-const ContactLink = memo(
-  ({
-    href,
-    icon: Icon,
-    iconName,
-    title,
-    description,
-    iconBgColor,
-    iconTextColor = 'text-white'
-  }: ContactLinkProps) => {
-    // Map Tailwind colors to CSS custom properties
-    const getHoverBgColor = (bgClass: string): string => {
-      const colorMap: Record<string, string> = {
-        'bg-[#f87171]': '#f87171',
-        'bg-[#2dd4bf]': '#2dd4bf',
-        'bg-[#3b82f6]': '#3b82f6',
-        'bg-[#00bba7]': '#00bba7',
-        'bg-[#26ab15]': '#26ab15',
-        'bg-[#4b5563]': '#4b5563'
-      };
-      return colorMap[bgClass] || '#000000';
-    };
-
-    return (
-      <Link
-        href={href}
-        className={styles.contactLink}
-        style={
-          {
-            '--hover-bg-color': getHoverBgColor(iconBgColor)
-          } as React.CSSProperties
-        }
-      >
-        <Icon
-          name={iconName}
-          className={`h-16 w-16 p-2 transition-colors duration-300 ${iconBgColor} ${iconTextColor}`}
-        />
-        <div className={`flex flex-col p-2`}>
-          <h3 className="font-bold">{title}</h3>
-          {description && <span className="text-gray-500">{description}</span>}
-        </div>
-      </Link>
-    );
-  }
-);
-
-ContactLink.displayName = 'ContactLink';
-
 const Contact = memo(() => {
-  const [contactMessage, setContactMessage] = useState<ContactMessage>(INIT_CONTACT_MESSAGE);
+  const [status, setStatus] = useState<FormStatus>({ type: null, message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleFormChange = useCallback((key: keyof ContactMessage, value: string) => {
-    setContactMessage((prev) => ({
-      ...prev,
-      [key]: value
-    }));
-  }, []);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset
+  } = useForm<EmailFormData>();
 
-  const handleSubmit = useCallback(
-    (e: React.FormEvent) => {
-      e.preventDefault();
-      // Add form submission logic here
-      console.log('Form submitted:', contactMessage);
-    },
-    [contactMessage]
-  );
+  const handleSubmitForm = async (data: EmailFormData) => {
+    setIsSubmitting(true);
+    setStatus({ type: null, message: '' });
+
+    try {
+      const response = await emailService.sendEmail(data);
+
+      if (response.success) {
+        setStatus({
+          type: 'success',
+          message: response.message
+        });
+        reset();
+      } else {
+        setStatus({
+          type: 'error',
+          message: response.message
+        });
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setStatus({
+        type: 'error',
+        message: 'An unexpected error occurred. Please try again.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <Paper id={NavItems[5].id} title="Contact" className={styles.dotsBackground}>
@@ -115,52 +72,119 @@ const Contact = memo(() => {
             </p>
           </header>
 
-          <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
+          <form onSubmit={handleSubmit(handleSubmitForm)} className="flex flex-col space-y-4">
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <Input
-                title="Name"
-                placeholder="Your Name"
-                type="text"
-                value={contactMessage.name}
-                onChange={(e) => handleFormChange('name', e.target.value)}
-                required={true}
-                className="w-full"
-                inputSize="md"
-              />
-              <Input
-                title="Email"
-                placeholder="youremail@domain.com"
-                type="email"
-                value={contactMessage.email}
-                onChange={(e) => handleFormChange('email', e.target.value)}
-                required={true}
-                className="w-full"
-                inputSize="md"
-              />
+              <div className="flex flex-col">
+                <Input
+                  title="Name"
+                  placeholder="Your Name"
+                  type="text"
+                  required={true}
+                  className="w-full"
+                  inputSize="md"
+                  error={!!errors.name}
+                  disabled={isSubmitting}
+                  {...register('name', {
+                    required: 'Name is required',
+                    minLength: {
+                      value: 2,
+                      message: 'Name must be at least 2 characters'
+                    }
+                  })}
+                />
+                {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>}
+              </div>
+              <div className="flex flex-col">
+                <Input
+                  title="Email"
+                  placeholder="youremail@domain.com"
+                  type="email"
+                  required={true}
+                  className="w-full"
+                  inputSize="md"
+                  error={!!errors.email}
+                  disabled={isSubmitting}
+                  {...register('email', {
+                    required: 'Email is required',
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                      message: 'Invalid email address'
+                    }
+                  })}
+                />
+                {errors.email && (
+                  <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
+                )}
+              </div>
             </div>
-            <Input
-              title="Subject"
-              placeholder="Project Name"
-              type="text"
-              value={contactMessage.subject}
-              onChange={(e) => handleFormChange('subject', e.target.value)}
-              required={true}
-              className="w-full"
-              inputSize="md"
-            />
-            <Input
-              title="Message"
-              placeholder="Description"
-              value={contactMessage.message}
-              rows={10}
-              onChange={(e) => handleFormChange('message', e.target.value)}
-              required={true}
-              inputSize="md"
-            />
-            <Button bgColor="#6880e5" className="h-12 w-full sm:w-auto" type="submit">
-              Submit
+            <div className="flex flex-col">
+              <Input
+                title="Subject"
+                placeholder="Project Name"
+                type="text"
+                required={true}
+                className="w-full"
+                inputSize="md"
+                error={!!errors.subject}
+                disabled={isSubmitting}
+                {...register('subject', {
+                  required: 'Subject is required',
+                  minLength: {
+                    value: 5,
+                    message: 'Subject must be at least 5 characters'
+                  }
+                })}
+              />
+              {errors.subject && (
+                <p className="mt-1 text-sm text-red-600">{errors.subject.message}</p>
+              )}
+            </div>
+            <div className="flex flex-col">
+              <Input
+                title="Message"
+                placeholder="Description"
+                rows={10}
+                required={true}
+                inputSize="md"
+                error={!!errors.message}
+                disabled={isSubmitting}
+                {...register('message', {
+                  required: 'Message is required',
+                  minLength: {
+                    value: 10,
+                    message: 'Message must be at least 10 characters'
+                  }
+                })}
+              />
+              {errors.message && (
+                <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>
+              )}
+            </div>
+            <Button
+              bgColor="#6880e5"
+              className="h-12 w-full sm:w-auto"
+              type="submit"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? (
+                <div className="flex items-center justify-center">
+                  <div className="mr-2 h-5 w-5 animate-spin rounded-full border-b-2 border-white"></div>
+                  Sending...
+                </div>
+              ) : (
+                'Send Message'
+              )}
             </Button>
           </form>
+
+          {/* Status Message */}
+          {status.type && (
+            <Toast
+              type={status.type}
+              message={status.message}
+              onClose={() => setStatus({ type: null, message: '' })}
+            />
+          )}
         </section>
         {/* Contact Information Section */}
         <div className="flex flex-1 flex-col space-y-6">
