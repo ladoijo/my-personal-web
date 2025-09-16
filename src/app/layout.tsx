@@ -35,15 +35,11 @@ export default function RootLayout({
         <NavBar />
         <main
           className={`
-            flex min-h-screen flex-col bg-gray-300 pr-6 pl-6
-            lg:pl-72
+            flex min-h-screen flex-col bg-[#f7f6f3] lg:pl-60
           `}
         >
           {children}
         </main>
-        <footer className={`bg-gray-100 p-4 text-center`}>
-          <p className="text-gray-600">© 2023 My Personal Web. All rights reserved.</p>
-        </footer>
       </body>
     </html>
   );

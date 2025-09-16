@@ -5,7 +5,7 @@ interface IWorkExperience {
   start: string;
   end?: string;
   description?: string;
-  technologies?: string[];
+  stacks?: string[];
 }
 
 export const WorkExperiences: IWorkExperience[] = [
@@ -17,7 +17,7 @@ export const WorkExperiences: IWorkExperience[] = [
     end: 'Sep 2017',
     description:
       'A company providing IT consulting and systems development services. Assigned to a client, PT Bank BTPN.',
-    technologies: [
+    stacks: [
       'CSS',
       'Grails',
       'Groovy',
@@ -41,7 +41,7 @@ export const WorkExperiences: IWorkExperience[] = [
     end: 'Mar 2019',
     description:
       'A technology company that provides software solutions to enhance business operations.',
-    technologies: [
+    stacks: [
       'CSS',
       'Git',
       'HTML',
@@ -65,7 +65,7 @@ export const WorkExperiences: IWorkExperience[] = [
     end: 'Jan 2022',
     description:
       'A startup focused on the agriculture, e-grocery and supply chain, An e-commerce platform that connects farmers with consumers.',
-    technologies: [
+    stacks: [
       'CI/CD',
       'CSS',
       'Docker',
@@ -93,21 +93,60 @@ export const WorkExperiences: IWorkExperience[] = [
     start: 'Jan 2022',
     end: 'Jan 2025',
     description: 'A financial technology company focused on sharia compliant solutions.',
-    technologies: [
-      'CI/CD',
-      'Docker',
-      'Git',
-      'Java',
-      'Maven',
-      'PostgreSQL',
-      'Spring Boot',
-      'Spring JPA'
-    ]
+    stacks: ['CI/CD', 'Docker', 'Git', 'Java', 'Maven', 'PostgreSQL', 'Spring Boot', 'Spring JPA']
   },
   {
     id: 5,
     company: 'Freelance',
+    description:
+      'Worked with various clients on web and mobile development projects, delivering full-stack solutions using modern technologies.',
     position: 'Full Stack Developer',
-    start: 'Jan 2025'
+    start: 'Jan 2025',
+    end: 'Now',
+    stacks: [
+      'Java',
+      'JavaScript',
+      'Spring',
+      'TypeScript',
+      'React.js',
+      'Next.js',
+      'React Native',
+      'Tailwind CSS'
+    ]
+  }
+];
+
+interface IEducation {
+  id: number;
+  institution: string;
+  degree: string;
+  major: string;
+  fieldOfStudy: string;
+  start: string;
+  end: string;
+  grade: number;
+}
+
+export const Educations: IEducation[] = [
+  {
+    id: 1,
+    institution: 'Padang State Polytechnic',
+    degree: 'Associate Degree',
+    major: 'Information Technology',
+    fieldOfStudy: 'Computer Engineering',
+    start: 'Aug 2008',
+    end: 'Jan 2012',
+    grade: 2.94
+  },
+
+  {
+    id: 2,
+    institution: 'Bandung Institute of Technology',
+    degree: 'Bachelor Degree',
+    major: 'Electrical Engineering',
+    fieldOfStudy: 'Computer Network Engineering and Digital Media',
+    start: 'Mar 2012',
+    end: 'Nov 2013',
+    grade: 3.38
   }
 ];
