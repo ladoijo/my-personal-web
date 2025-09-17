@@ -143,7 +143,7 @@ const NavBar = () => {
           <ul
             className={`h-full content-center items-center divide-y-2 divide-black overflow-y-auto`}
           >
-            {NavItems.map(({ id, label, icon: Icon }) => {
+            {NavItems.map(({ id, label, Icon }) => {
               return (
                 <Link
                   key={id}

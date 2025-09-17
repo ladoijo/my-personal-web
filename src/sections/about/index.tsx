@@ -1,14 +1,11 @@
+import CompanyIcon from '@/assets/icons/company.svg';
+import ExperienceIcon from '@/assets/icons/experience.svg';
 import Paper from '@/components/Paper';
 import { WorkExperiences } from '@/constants/HistoriesConst';
 import { NavItems } from '@/constants/NavItemsConst';
-import { IconComponent } from '@/types/icon';
 import { useMemo } from 'react';
-import company from '~/public/assets/icons/company.svg';
-import experience from '~/public/assets/icons/experience.svg';
 
 const About = () => {
-  const CompanyIcon: IconComponent = company;
-  const ExperienceIcon: IconComponent = experience;
   const totalYearsExp = useMemo(
     () =>
       WorkExperiences.reduce((total, experience) => {

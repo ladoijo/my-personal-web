@@ -1,11 +1,11 @@
+import ContraIcon from '@/assets/icons/contra.svg';
+import GitHubIcon from '@/assets/icons/github.svg';
+import LinkedInIcon from '@/assets/icons/linkedin.svg';
+import MailIcon from '@/assets/icons/mail.svg';
+import PhoneIcon from '@/assets/icons/phone.svg';
+import UpworkIcon from '@/assets/icons/upwork.svg';
+import WhatsAppIcon from '@/assets/icons/whatsapp.svg';
 import { IconComponent } from '@/types/icon';
-import GitHubIcon from '~/public/assets/icons/github.svg';
-import LinkedInIcon from '~/public/assets/icons/linkedin.svg';
-import ContraIcon from '~/public/assets/icons/contra.svg';
-import UpworkIcon from '~/public/assets/icons/upwork.svg';
-import WhatsAppIcon from '~/public/assets/icons/whatsapp.svg';
-import MailIcon from '~/public/assets/icons/mail.svg';
-import PhoneIcon from '~/public/assets/icons/phone.svg';
 
 interface IAccountUrls {
   [key: string]: {
