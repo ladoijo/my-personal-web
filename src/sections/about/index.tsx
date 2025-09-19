@@ -25,7 +25,7 @@ const About = () => {
   );
 
   return (
-    <Paper id={NavItems[1].id} title="About Me">
+    <Paper id={NavItems[1].id} title="About Me" className="bg-dots">
       <div
         className={`
           flex flex-col space-y-5

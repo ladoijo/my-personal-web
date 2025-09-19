@@ -55,7 +55,7 @@ const NavBar = () => {
           ${isNavOpen ? 'translate-x-0' : `-translate-x-full`}
         `}
       >
-        <nav className={`flex h-full flex-col border-r-2 border-black bg-amber-50`}>
+        <nav className={`flex h-full flex-col border-r-2 border-black bg-white`}>
           <div className="relative px-5 pt-5 pb-3">
             <Image
               width={832}

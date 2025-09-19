@@ -10,7 +10,6 @@ import { AccountUrls } from '@/constants/UrlConst';
 import { EmailFormData, emailService } from '@/utils/email';
 import { memo, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import styles from './contact.module.css';
 import ContactLink from './ContactLink';
 
 interface FormStatus {
@@ -60,7 +59,7 @@ const Contact = memo(() => {
   };
 
   return (
-    <Paper id={NavItems[5].id} title="Contact" className={styles.dotsBackground}>
+    <Paper id={NavItems[5].id} title="Contact" className="bg-dots">
       <div
         className={`
           flex flex-col gap-6
