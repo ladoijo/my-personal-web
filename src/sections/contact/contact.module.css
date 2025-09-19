@@ -1,0 +1,50 @@
+/* Contact link styles */
+.contactLink {
+  display: flex;
+  height: fit-content;
+  min-width: 243px;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  overflow: hidden;
+  border-radius: 0.375rem;
+  border: 1px solid #000;
+  background-color: white;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.contactLink:hover {
+  transform: scale(1.02);
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.contactLink::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--hover-bg-color);
+  transition: left 0.4s ease;
+  z-index: -1;
+}
+
+.contactLink:hover::before {
+  left: 0;
+}
+
+/* Icon background colors for hover effect */
+.contactLink:hover {
+  color: white !important;
+}
+
+.contactLink:hover h3,
+.contactLink:hover span {
+  color: white !important;
+}
