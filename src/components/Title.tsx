@@ -7,7 +7,7 @@ const tvTitle = tv({
         text-sm
         md:text-base
         lg:text-lg
-      `, // 👈 responsive chain
+      `,
       md: `
         text-base
         md:text-lg
@@ -22,6 +22,11 @@ const tvTitle = tv({
         text-xl
         md:text-2xl
         lg:text-3xl
+      `,
+      '2xl': `
+        text-2xl
+        md:text-3xl
+        lg:text-4xl
       `
     }
   },
@@ -32,7 +37,7 @@ const tvTitle = tv({
 
 interface TitleProps {
   title: string;
-  size: 'sm' | 'md' | 'lg' | 'xl';
+  size: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
   hasBorder?: boolean;
 }
 

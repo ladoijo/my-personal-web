@@ -9,14 +9,13 @@ interface PaperProps extends React.HTMLAttributes<HTMLElement> {
 }
 
 const Paper = memo(({ children, title, bgColor = 'white', className, ...props }: PaperProps) => {
-  // Memoize the title element to prevent unnecessary re-renders
   const titleElement = title ? (
     <div className={styles.titleBadge}>
       <h1
         className={`
           relative z-10 text-lg text-white
-          md:text-xl
-          lg:text-2xl
+          md:text-3xl
+          lg:text-5xl
         `}
       >
         {title}

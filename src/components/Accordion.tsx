@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
-import clsx from 'clsx';
 import { IconComponent } from '@/types/icon';
+import clsx from 'clsx';
+import React, { useState } from 'react';
 
 type AccordionProps = React.ButtonHTMLAttributes<HTMLDivElement> & {
   leftIcon?: IconComponent;
@@ -29,7 +29,7 @@ const Accordion = ({
   return (
     <div>
       <div
-        onClick={handleClick}
+        onTouchEnd={handleClick}
         className={clsx(
           'h-full w-full rounded-md border-2 border-black px-2 py-2 font-bold text-black',
           'flex flex-row shadow-[4px_4px_black] transition-all duration-300',

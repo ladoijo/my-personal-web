@@ -3,14 +3,16 @@ import React from 'react';
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   bgColor?: string;
+  pressed?: boolean;
 };
 
 const Button = ({
   title,
   className,
-  bgColor = '#f0b21a',
+  bgColor = '#ffdb80',
   children,
   disabled = false,
+  pressed = false,
   ...props
 }: ButtonProps) => {
   return (
@@ -21,8 +23,9 @@ const Button = ({
         'bg-[var(--btn-bg)] shadow-[4px_4px_black] transition-all duration-300',
         {
           'hover:cursor-pointer hover:bg-black hover:text-white hover:shadow-[4px_4px_var(--btn-bg)] active:transform-[translate(3px,3px)] active:shadow-none':
-            !disabled,
-          'cursor-not-allowed opacity-60': disabled
+            !disabled && !pressed,
+          'cursor-not-allowed opacity-60': disabled,
+          'transform-[translate(3px,3px)] cursor-default bg-black text-white shadow-none': pressed
         },
         className
       )}

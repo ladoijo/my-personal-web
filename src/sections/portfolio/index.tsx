@@ -1,12 +1,12 @@
 'use client';
 
+import Button from '@/components/Button';
 import Paper from '@/components/Paper';
 import { NavItems } from '@/constants/NavItemsConst';
-import { portfolioCategories, portfolioItems } from '@/constants/PortfolioConst';
-import { PortfolioItem as PortfolioItemType } from '@/types/portfolio';
+import { portfolioItems, projectCategories } from '@/constants/ResumeConst';
+import { ProjectItem as PortfolioItemType } from '@/types/portfolio';
 import { useMemo, useState } from 'react';
 import PortfolioItem from './PortfolioItem';
-import styles from './portfolio.module.css';
 
 const Portfolio = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -19,39 +19,36 @@ const Portfolio = () => {
   }, [selectedCategory]);
 
   const handleItemClick = (item: PortfolioItemType) => {
-    // You can add modal or detailed view logic here
     console.log('Portfolio item clicked:', item);
   };
 
   return (
-    <Paper id={NavItems[4].id} title="Portfolio" bgColor="#FFF5E9">
-      <div className={styles.portfolioContainer}>
+    <Paper id={NavItems[4].id} title="Portfolio" bgColor="#e3e3ff">
+      <div className="w-full">
         {/* Category Filter */}
-        <div className={styles.categoryFilter}>
-          {portfolioCategories.map((category) => (
-            <button
+        <div className="mb-8 flex flex-wrap justify-center gap-4 md:justify-start">
+          {projectCategories.map((category) => (
+            <Button
               key={category.id}
-              className={`
-                ${styles.categoryButton}
-                ${selectedCategory === category.id ? styles.active : ''}
-              `}
+              bgColor="#DDEB9D"
+              pressed={selectedCategory === category.id}
               onClick={() => setSelectedCategory(category.id)}
             >
               {category.label} ({category.count})
-            </button>
+            </Button>
           ))}
         </div>
 
         {/* Portfolio Grid */}
         {filteredItems.length > 0 ? (
-          <div className={styles.portfolioGrid}>
+          <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {filteredItems.map((item) => (
               <PortfolioItem key={item.id} item={item} onClick={handleItemClick} />
             ))}
           </div>
         ) : (
-          <div className={styles.emptyState}>
-            <h3>No projects found</h3>
+          <div className="py-12 text-center text-gray-600">
+            <h3 className="mb-4 text-gray-800">No projects found</h3>
             <p>No projects match the selected category.</p>
           </div>
         )}

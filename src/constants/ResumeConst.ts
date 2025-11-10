@@ -1,12 +1,13 @@
-import { PortfolioItem, PortfolioCategory } from '@/types/portfolio';
+import { ProjectCategory, ProjectItem } from '@/types/portfolio';
 
-export const portfolioItems: PortfolioItem[] = [
+export const portfolioItems: ProjectItem[] = [
   {
     id: '1',
     title: 'E-Commerce Platform',
     description:
       'A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, payment processing, inventory management, and admin dashboard.',
-    image: '/placeholder-project-1.webp',
+    image:
+      'https://img.freepik.com/free-photo/cartoon-lifestyle-summertime-scene_23-2151068217.jpg?semt=ais_incoming&w=740&q=80',
     technologies: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Tailwind CSS'],
     category: 'web',
     liveUrl: 'https://example-ecommerce.com',
@@ -18,7 +19,8 @@ export const portfolioItems: PortfolioItem[] = [
     title: 'Mobile Banking App',
     description:
       'A secure mobile banking application for iOS and Android with biometric authentication, transaction history, and real-time notifications.',
-    image: '/placeholder-project-2.webp',
+    image:
+      'https://img.freepik.com/free-photo/cartoon-lifestyle-summertime-scene_23-2151068217.jpg?semt=ais_incoming&w=740&q=80',
     technologies: ['React Native', 'TypeScript', 'Firebase', 'Redux'],
     category: 'mobile',
     liveUrl: 'https://apps.apple.com/banking-app',
@@ -30,7 +32,8 @@ export const portfolioItems: PortfolioItem[] = [
     title: 'Task Management Dashboard',
     description:
       'A collaborative task management tool with real-time updates, team collaboration features, and project tracking capabilities.',
-    image: '/placeholder-project-3.webp',
+    image:
+      'https://img.freepik.com/free-photo/cartoon-lifestyle-summertime-scene_23-2151068217.jpg?semt=ais_incoming&w=740&q=80',
     technologies: ['Vue.js', 'Express', 'Socket.io', 'PostgreSQL'],
     category: 'web',
     liveUrl: 'https://taskmanager.example.com',
@@ -42,7 +45,8 @@ export const portfolioItems: PortfolioItem[] = [
     title: 'Weather Desktop App',
     description:
       'A cross-platform desktop application for weather forecasting with location-based services and customizable widgets.',
-    image: '/placeholder-project-4.webp',
+    image:
+      'https://img.freepik.com/free-photo/cartoon-lifestyle-summertime-scene_23-2151068217.jpg?semt=ais_incoming&w=740&q=80',
     technologies: ['Electron', 'JavaScript', 'OpenWeather API'],
     category: 'desktop',
     githubUrl: 'https://github.com/username/weather-app',
@@ -53,9 +57,10 @@ export const portfolioItems: PortfolioItem[] = [
     title: 'UI/UX Design System',
     description:
       'A comprehensive design system with reusable components, style guide, and documentation for consistent user experiences.',
-    image: '/placeholder-project-5.webp',
+    image:
+      'https://img.freepik.com/free-photo/cartoon-lifestyle-summertime-scene_23-2151068217.jpg?semt=ais_incoming&w=740&q=80',
     technologies: ['Figma', 'Storybook', 'CSS', 'Design Tokens'],
-    category: 'design',
+    category: 'backend',
     liveUrl: 'https://design-system.example.com',
     featured: false
   },
@@ -64,7 +69,8 @@ export const portfolioItems: PortfolioItem[] = [
     title: 'AI Chatbot Platform',
     description:
       'An intelligent chatbot platform with natural language processing, multi-language support, and analytics dashboard.',
-    image: '/placeholder-project-6.webp',
+    image:
+      'https://img.freepik.com/free-photo/cartoon-lifestyle-summertime-scene_23-2151068217.jpg?semt=ais_incoming&w=740&q=80',
     technologies: ['Python', 'TensorFlow', 'FastAPI', 'React'],
     category: 'web',
     liveUrl: 'https://chatbot.example.com',
@@ -73,11 +79,16 @@ export const portfolioItems: PortfolioItem[] = [
   }
 ];
 
-export const portfolioCategories: PortfolioCategory[] = [
+export const projectCategories: ProjectCategory[] = [
   { id: 'all', label: 'All Projects', count: portfolioItems.length },
   {
+    id: 'backend',
+    label: 'Backend',
+    count: portfolioItems.filter((item) => item.category === 'backend').length
+  },
+  {
     id: 'web',
-    label: 'Web Applications',
+    label: 'Website',
     count: portfolioItems.filter((item) => item.category === 'web').length
   },
   {
@@ -89,10 +100,5 @@ export const portfolioCategories: PortfolioCategory[] = [
     id: 'desktop',
     label: 'Desktop Apps',
     count: portfolioItems.filter((item) => item.category === 'desktop').length
-  },
-  {
-    id: 'design',
-    label: 'Design',
-    count: portfolioItems.filter((item) => item.category === 'design').length
   }
 ];

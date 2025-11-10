@@ -7,6 +7,11 @@ import Link from 'next/link';
 import { useCallback, useEffect, useState } from 'react';
 import Button from './Button';
 
+const WhatsAppIcon = AccountUrls.whatsapp.Icon;
+const MailIcon = AccountUrls.mail.Icon;
+const LinkedInIcon = AccountUrls.linkedin.Icon;
+const GitHubIcon = AccountUrls.github.Icon;
+
 const NavBar = () => {
   const [activeSection, setActiveSection] = useState('');
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -25,9 +30,9 @@ const NavBar = () => {
   );
 
   useEffect(() => {
-    const value = window.location.hash.startsWith('#')
-      ? (window.location.hash.slice(1) as NavItem['id'])
-      : (activeSection as NavItem['id']);
+    const value = globalThis.location.hash.startsWith('#')
+      ? globalThis.location.hash.slice(1)
+      : activeSection;
     handleNavItemClick(value);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -37,11 +42,8 @@ const NavBar = () => {
       {/* Overlay */}
       {isNavOpen && (
         <div
-          className={`
-            fixed inset-0 z-40 bg-black opacity-50 transition-opacity duration-500
-            lg:hidden
-          `}
-          onClick={toggleNav}
+          className="fixed inset-0 z-40 bg-black opacity-50 transition-opacity duration-500 lg:hidden"
+          onTouchStart={toggleNav}
         />
       )}
 
@@ -61,7 +63,7 @@ const NavBar = () => {
               width={832}
               height={1216}
               className={`mx-auto h-40 w-40 rounded-full border-3 border-black object-cover`}
-              src="/assets/images/me.webp"
+              src="/assets/images/hdygidev.webp"
               alt="Profile Picture"
             />
             <span
@@ -86,7 +88,7 @@ const NavBar = () => {
                 hover:bg-black
               `}
             >
-              <AccountUrls.whatsapp.Icon
+              <WhatsAppIcon
                 name={AccountUrls.whatsapp.name}
                 className={`
                   h-5 w-5 text-black transition-colors duration-300
@@ -101,7 +103,7 @@ const NavBar = () => {
                 hover:bg-black
               `}
             >
-              <AccountUrls.mail.Icon
+              <MailIcon
                 name={AccountUrls.mail.name}
                 className={`
                   h-5 w-5 text-black transition-colors duration-300
@@ -116,7 +118,7 @@ const NavBar = () => {
                 hover:bg-black
               `}
             >
-              <AccountUrls.linkedin.Icon
+              <LinkedInIcon
                 name={AccountUrls.linkedin.name}
                 className={`
                   h-5 w-5 text-black transition-colors duration-300
@@ -131,7 +133,7 @@ const NavBar = () => {
                 hover:bg-black
               `}
             >
-              <AccountUrls.github.Icon
+              <GitHubIcon
                 name={AccountUrls.github.name}
                 className={`
                   h-5 w-5 text-black transition-colors duration-300

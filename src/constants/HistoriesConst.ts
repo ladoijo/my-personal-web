@@ -1,11 +1,13 @@
-interface IWorkExperience {
+export interface IWorkExperience {
   id: number;
   company: string;
   position: string;
   start: string;
   end?: string;
   description?: string;
+  tasks?: string[];
   stacks?: string[];
+  color?: string; // Hex color code
 }
 
 export const WorkExperiences: IWorkExperience[] = [
@@ -17,6 +19,10 @@ export const WorkExperiences: IWorkExperience[] = [
     end: 'Sep 2017',
     description:
       'A company providing IT consulting and systems development services. Assigned to a client, PT Bank BTPN.',
+    tasks: [
+      'Maintained and enhanced backend features for core digital banking services',
+      'Built internal dashboards and integrated monitoring pipelines using Mule ESB and Grails. Facilitating and improving a rapid and effective response to incident by 50%'
+    ],
     stacks: [
       'CSS',
       'Grails',
@@ -31,7 +37,8 @@ export const WorkExperiences: IWorkExperience[] = [
       'Oracle',
       'Spring Boot',
       'Spring MVC'
-    ]
+    ],
+    color: '#a2cef1'
   },
   {
     id: 2,
@@ -41,6 +48,10 @@ export const WorkExperiences: IWorkExperience[] = [
     end: 'Mar 2019',
     description:
       'A technology company that provides software solutions to enhance business operations.',
+    tasks: [
+      'Created VM/server monitoring tools using Spring Boot + MariaDB, reducing manual checks by 50%',
+      'Improved infrastructure health visibility, enabling faster incident response by 50%'
+    ],
     stacks: [
       'CSS',
       'Git',
@@ -55,7 +66,8 @@ export const WorkExperiences: IWorkExperience[] = [
       'Rancher',
       'Redis',
       'Spring Boot'
-    ]
+    ],
+    color: '#f9c9c9'
   },
   {
     id: 3,
@@ -63,8 +75,12 @@ export const WorkExperiences: IWorkExperience[] = [
     position: 'Front End Engineer',
     start: 'Mar 2019',
     end: 'Jan 2022',
-    description:
-      'A startup focused on the agriculture, e-grocery and supply chain, An e-commerce platform that connects farmers with consumers.',
+    description: 'Agritech and e-commerce platform connecting farmers to consumers and businesses',
+    tasks: [
+      'Developed dynamic dashboards for account managers, improving order management efficiency by 15%.',
+      'Modernized the e-commerce frontend using React and TypeScript, reducing page load time by 30%',
+      'Built features across B2B and B2C modules, including product registration and scheduling tools. Improving  our team work by 30%'
+    ],
     stacks: [
       'CI/CD',
       'CSS',
@@ -84,7 +100,8 @@ export const WorkExperiences: IWorkExperience[] = [
       'Vue.js',
       'Vuex',
       'styled-components'
-    ]
+    ],
+    color: '#b1f9f0'
   },
   {
     id: 4,
@@ -92,8 +109,15 @@ export const WorkExperiences: IWorkExperience[] = [
     position: 'Senior Software Engineer',
     start: 'Jan 2022',
     end: 'Jan 2025',
-    description: 'A financial technology company focused on sharia compliant solutions.',
-    stacks: ['CI/CD', 'Docker', 'Git', 'Java', 'Maven', 'PostgreSQL', 'Spring Boot', 'Spring JPA']
+    description: 'Sharia compliant fintech startup delivering digital banking services.',
+    tasks: [
+      'Develop an educational module on the ALAMI P2P product to increase user knowledge of our product to 50%',
+      'Led development of the Time Deposit feature for Hijra Bank, adopted by 30K+ users in under 3 months',
+      'Optimized Spring Boot microservices to increase transaction throughput by 20%',
+      'Authored internal onboarding and technical documentation, reducing ramp up time by 60%'
+    ],
+    stacks: ['CI/CD', 'Docker', 'Git', 'Java', 'Maven', 'PostgreSQL', 'Spring Boot', 'Spring JPA'],
+    color: '#a4e8fd'
   },
   {
     id: 5,
@@ -112,11 +136,12 @@ export const WorkExperiences: IWorkExperience[] = [
       'Next.js',
       'React Native',
       'Tailwind CSS'
-    ]
+    ],
+    color: '#fdebc3'
   }
 ];
 
-interface IEducation {
+export interface IEducation {
   id: number;
   institution: string;
   degree: string;
@@ -148,5 +173,41 @@ export const Educations: IEducation[] = [
     start: 'Mar 2012',
     end: 'Nov 2013',
     grade: 3.38
+  }
+];
+
+export interface ICertificate {
+  id: number;
+  name: string;
+  institution: string;
+  publishedDate: string;
+  url: string;
+  color?: string; // Hex color code
+}
+
+export const Certificates: ICertificate[] = [
+  {
+    id: 1,
+    name: 'Quality Software Developer Foundation Certificate In Maintainability',
+    institution: 'PeopleCert',
+    publishedDate: 'May 2017',
+    url: 'https://drive.google.com/file/d/1Ww3F8E2tFr71-io3F5l7svePCBX5hUyW/view?usp=sharing',
+    color: '#F3FFe3'
+  },
+  {
+    id: 2,
+    name: 'EF Set Certificate: B2 Upper Intermediate',
+    institution: 'English First (EF)',
+    publishedDate: 'Jun 2025',
+    url: 'https://drive.google.com/file/d/1kFdNiW6b2Tft0cJ-l7oVdQnnh2s9TPc9/view?usp=sharing',
+    color: '#FDE4F9'
+  },
+  {
+    id: 3,
+    name: 'Frontend Developer (React)',
+    institution: 'HackerRank',
+    publishedDate: 'Jul 2025',
+    url: 'https://www.hackerrank.com/certificates/iframe/cf75903d445a',
+    color: '#E3F2FF'
   }
 ];
