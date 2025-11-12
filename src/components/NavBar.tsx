@@ -69,14 +69,14 @@ const NavBar = () => {
             <Image
               width={2600}
               height={3800}
-              className={`mx-auto h-40 w-40 rounded-full border-3 border-black bg-[#fdebc3] object-cover object-[center_25%]`}
+              className={`mx-auto h-40 w-40 rounded-full border-2 border-black bg-[#fdebc3] object-cover object-[center_25%]`}
               src="/assets/images/me.webp"
               alt="Profile Picture"
             />
             <span
               className={`
-                absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full border-2 border-white
-                bg-teal-600 px-3 py-1 text-xs font-semibold text-white shadow-lg
+                absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full border-2 border-black
+                bg-[#7fcec6] px-3 py-1 text-xs font-semibold text-black shadow-lg
               `}
             >
               #OPENTOWORK
