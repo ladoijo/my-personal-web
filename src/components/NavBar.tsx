@@ -1,7 +1,7 @@
 'use client';
 
 import { NavItem, NavItems } from '@/constants/NavItemsConst';
-import { AccountUrls } from '@/constants/UrlConst';
+import { AccountUrls, CVUrl } from '@/constants/UrlConst';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useCallback, useEffect, useState } from 'react';
@@ -28,6 +28,13 @@ const NavBar = () => {
     },
     [isNavOpen, toggleNav]
   );
+
+  const handleDownload = useCallback(() => {
+    const anchor = document.createElement('a');
+    anchor.href = CVUrl;
+    anchor.download = 'hadyan_putra_yasrizal_cv.pdf';
+    anchor.click();
+  }, []);
 
   useEffect(() => {
     const value = globalThis.location.hash.startsWith('#')
@@ -60,10 +67,10 @@ const NavBar = () => {
         <nav className={`flex h-full flex-col border-r-2 border-black bg-white`}>
           <div className="relative px-5 pt-5 pb-3">
             <Image
-              width={832}
-              height={1216}
-              className={`mx-auto h-40 w-40 rounded-full border-3 border-black object-cover`}
-              src="/assets/images/hdygidev.webp"
+              width={2600}
+              height={3800}
+              className={`mx-auto h-40 w-40 rounded-full border-3 border-black bg-[#fdebc3] object-cover object-[center_25%]`}
+              src="/assets/images/me.webp"
               alt="Profile Picture"
             />
             <span
@@ -168,7 +175,9 @@ const NavBar = () => {
             })}
           </ul>
           <div className="m-5 flex justify-center">
-            <Button className="h-10 w-full">Download CV</Button>
+            <Button className="h-10 w-full" onClick={handleDownload}>
+              Download CV
+            </Button>
           </div>
           <footer className="mt-auto border-t-2 border-black bg-white p-4 text-center">
             <p className="text-xs text-gray-600">

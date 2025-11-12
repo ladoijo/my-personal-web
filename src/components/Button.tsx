@@ -9,7 +9,7 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 const Button = ({
   title,
   className,
-  bgColor = '#ffdb80',
+  bgColor = '#fdebc3',
   children,
   disabled = false,
   pressed = false,

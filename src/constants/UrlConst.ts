@@ -67,3 +67,12 @@ export const AccountUrls: IAccountUrls = {
     placeholder: '+62 878 8851 5625'
   }
 };
+
+export const CVUrl =
+  'https://drive.google.com/uc?export=download&id=1phyU-cGQECdXUiMKhr-PSFnOSnNf9Dap';
+
+export const CertificateUrls: Record<string, string> = {
+  qsd: 'https://drive.google.com/file/d/1Ww3F8E2tFr71-io3F5l7svePCBX5hUyW/view?usp=sharing',
+  english: 'https://drive.google.com/file/d/1kFdNiW6b2Tft0cJ-l7oVdQnnh2s9TPc9/view?usp=sharing',
+  react: 'https://www.hackerrank.com/certificates/iframe/cf75903d445a'
+};

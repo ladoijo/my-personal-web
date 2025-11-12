@@ -1,3 +1,5 @@
+import { CertificateUrls } from './UrlConst';
+
 export interface IWorkExperience {
   id: number;
   company: string;
@@ -101,7 +103,7 @@ export const WorkExperiences: IWorkExperience[] = [
       'Vuex',
       'styled-components'
     ],
-    color: '#b1f9f0'
+    color: '#F3FFe3'
   },
   {
     id: 4,
@@ -117,7 +119,7 @@ export const WorkExperiences: IWorkExperience[] = [
       'Authored internal onboarding and technical documentation, reducing ramp up time by 60%'
     ],
     stacks: ['CI/CD', 'Docker', 'Git', 'Java', 'Maven', 'PostgreSQL', 'Spring Boot', 'Spring JPA'],
-    color: '#a4e8fd'
+    color: '#E3F2FF'
   },
   {
     id: 5,
@@ -191,7 +193,7 @@ export const Certificates: ICertificate[] = [
     name: 'Quality Software Developer Foundation Certificate In Maintainability',
     institution: 'PeopleCert',
     publishedDate: 'May 2017',
-    url: 'https://drive.google.com/file/d/1Ww3F8E2tFr71-io3F5l7svePCBX5hUyW/view?usp=sharing',
+    url: CertificateUrls.qsd,
     color: '#F3FFe3'
   },
   {
@@ -199,7 +201,7 @@ export const Certificates: ICertificate[] = [
     name: 'EF Set Certificate: B2 Upper Intermediate',
     institution: 'English First (EF)',
     publishedDate: 'Jun 2025',
-    url: 'https://drive.google.com/file/d/1kFdNiW6b2Tft0cJ-l7oVdQnnh2s9TPc9/view?usp=sharing',
+    url: CertificateUrls.english,
     color: '#FDE4F9'
   },
   {
@@ -207,7 +209,7 @@ export const Certificates: ICertificate[] = [
     name: 'Frontend Developer (React)',
     institution: 'HackerRank',
     publishedDate: 'Jul 2025',
-    url: 'https://www.hackerrank.com/certificates/iframe/cf75903d445a',
+    url: CertificateUrls.react,
     color: '#E3F2FF'
   }
 ];

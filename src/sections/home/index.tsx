@@ -1,10 +1,10 @@
 'use client';
 
+import Button from '@/components/Button';
 import Paper from '@/components/Paper';
+import { NavItems } from '@/constants/NavItemsConst';
 import { Typewriter } from 'react-simple-typewriter';
 import styles from './home.module.css';
-import Button from '@/components/Button';
-import { NavItems } from '@/constants/NavItemsConst';
 import Photo from './Photo';
 
 const jobOptions = [
@@ -15,6 +15,14 @@ const jobOptions = [
 ];
 
 const Home = () => {
+  const handleGetInTouchClick = () => {
+    document.getElementById(NavItems[5].id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleSeeMyWorksClick = () => {
+    document.getElementById(NavItems[4].id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <Paper id={NavItems[0].id} bgColor="#e3e3ff">
       <div
@@ -80,11 +88,11 @@ const Home = () => {
             be useful to the community around me.
           </p>
           <div className={`mt-8 flex flex-row items-center gap-4`}>
-            <Button bgColor="#00d5be" className="h-10 w-30">
+            <Button bgColor="#7fcec6" className="h-10 w-30" onClick={handleGetInTouchClick}>
               Get in Touch
             </Button>
-            <Button bgColor="#ffa0ad" className="h-10 w-30">
-              Contact Me
+            <Button bgColor="#f9c9c9" className="h-10 w-36" onClick={handleSeeMyWorksClick}>
+              See My Works
             </Button>
           </div>
         </div>
