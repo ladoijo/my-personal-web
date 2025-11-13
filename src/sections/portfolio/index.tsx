@@ -26,7 +26,12 @@ const Portfolio = () => {
     <Paper id={NavItems[4].id} title="Portfolio" bgColor="#e3e3ff">
       <div className="w-full">
         {/* Category Filter */}
-        <div className="mb-8 flex flex-wrap justify-center gap-4 md:justify-start">
+        <div
+          className={`
+            mb-8 flex flex-wrap justify-center gap-4
+            md:justify-start
+          `}
+        >
           {projectCategories.map((category) => (
             <Button
               key={category.id}
@@ -41,7 +46,13 @@ const Portfolio = () => {
 
         {/* Portfolio Grid */}
         {filteredItems.length > 0 ? (
-          <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div
+            className={`
+              mt-8 grid grid-cols-1 gap-8
+              md:grid-cols-2
+              lg:grid-cols-3
+            `}
+          >
             {filteredItems.map((item) => (
               <PortfolioItem key={item.id} item={item} onClick={handleItemClick} />
             ))}

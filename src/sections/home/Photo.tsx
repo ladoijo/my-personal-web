@@ -31,7 +31,11 @@ const Photo = () => {
           width={1509}
           src="/assets/images/hdygidev.webp"
           alt="company"
-          className="h-[10rem] w-fit rotate-12 rounded-md object-cover transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-0"
+          className={`
+            h-[10rem] w-fit rotate-12 rounded-md object-cover transition-all duration-300
+            ease-in-out
+            hover:scale-110 hover:rotate-0
+          `}
         />
       </div>
     </>

@@ -8,7 +8,12 @@ const CardEducationSummary = ({
   isLastItem?: boolean;
 }) => (
   <div
-    className={`x-12 flex flex-col gap-2 self-start rounded-md border-2 border-dotted p-3 text-left ${isLastItem ? 'mb-0' : 'mb-4'} transition-all duration-300 hover:scale-110`}
+    className={`
+      flex flex-col gap-2 self-start rounded-md border-2 border-dotted p-3 text-left
+      ${isLastItem ? `mb-0` : `mb-4`}
+      transition-all duration-300
+      hover:scale-110
+    `}
   >
     <div className="flex flex-col gap-2 rounded-sm border-2 border-dotted bg-white px-4 pt-1 pb-2.5">
       <div className="flex flex-col gap-2">
