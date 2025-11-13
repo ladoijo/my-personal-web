@@ -25,16 +25,16 @@ const Photo = () => {
       >
         <circle cx="60" cy="60" r="50" stroke="#0EA5A4" strokeDasharray="6 8" strokeWidth="2" />
       </svg>
-      <div className="relative flex h-full items-center justify-center">
+      <div className="relative flex h-full w-full items-center justify-center">
         <Image
           height={380}
           width={1509}
           src="/assets/images/hdygidev.webp"
           alt="company"
           className={`
-            h-[10rem] w-fit rotate-12 rounded-md object-cover transition-all duration-300
-            ease-in-out
+            w-full rounded-md object-cover transition-all duration-300 ease-in-out
             hover:scale-110 hover:rotate-0
+            lg:h-[10rem] lg:rotate-12
           `}
         />
       </div>

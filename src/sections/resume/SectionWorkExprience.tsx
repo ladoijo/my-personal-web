@@ -16,26 +16,46 @@ const SectionWorkExprience = () => {
       </div>
       <div className="flex w-full flex-col">
         {workExpSorted.map((we, index) => (
-          <div key={we.id} className="grid grid-cols-[1fr_auto_1fr] items-start gap-2">
-            {index % 2 === 0 ? (
-              <>
+          <div key={we.id}>
+            <div
+              className={`
+                hidden grid-cols-[1fr_auto_1fr] items-start gap-2
+                lg:grid
+              `}
+            >
+              {index % 2 === 0 ? (
                 <DateRangeHistory start={we.start} end={we.end} even={false} />
-                <VerticalLineConnector type="work" />
+              ) : (
                 <CardWorkSummary
                   workExperience={we}
                   isLastItem={index === workExpSorted.length - 1}
                 />
-              </>
-            ) : (
-              <>
+              )}
+              <VerticalLineConnector type="work" />
+              {index % 2 === 0 ? (
                 <CardWorkSummary
                   workExperience={we}
                   isLastItem={index === workExpSorted.length - 1}
                 />
-                <VerticalLineConnector type="work" />
+              ) : (
+                <DateRangeHistory start={we.start} end={we.end} even={false} />
+              )}
+            </div>
+            <div
+              className={`
+                grid grid-cols-[auto_1fr] items-start gap-2
+                lg:hidden
+              `}
+            >
+              <VerticalLineConnector type="work" />
+              <div className="flex flex-col">
                 <DateRangeHistory start={we.start} end={we.end} even={true} />
-              </>
-            )}
+                <CardWorkSummary
+                  workExperience={we}
+                  isLastItem={index === workExpSorted.length - 1}
+                />
+              </div>
+            </div>
           </div>
         ))}
       </div>

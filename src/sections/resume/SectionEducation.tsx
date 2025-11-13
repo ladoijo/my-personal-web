@@ -2,7 +2,6 @@ import EducationIcon from '@/assets/icons/education.svg';
 import Title from '@/components/Title';
 import { Educations } from '@/constants/HistoriesConst';
 import CardEducationSummary from './components/CardEducationSummary';
-import DateRangeHistory from './components/DateRangeHistory';
 import VerticalLineConnector from './components/VerticalLineConnector';
 
 const SectionEducation = () => {
@@ -33,13 +32,45 @@ const SectionEducation = () => {
         >
           <div className="flex w-full flex-col">
             {educationsSorted.map((ed, index) => (
-              <div key={ed.id} className="grid grid-cols-[auto_auto_1fr] items-start gap-2">
-                <DateRangeHistory start={ed.start} end={ed.end} />
+              <div
+                key={ed.id}
+                className={`
+                  grid grid-cols-[auto_1fr] items-start gap-2
+                  lg:grid-cols-[auto_auto_1fr]
+                `}
+              >
+                <div
+                  className={`
+                    hidden
+                    lg:block
+                  `}
+                >
+                  <b>{ed.degree}</b>
+                </div>
                 <VerticalLineConnector type="education" />
-                <CardEducationSummary
-                  education={ed}
-                  isLastItem={index === educationsSorted.length - 1}
-                />
+                <div
+                  className={`
+                    block
+                    lg:hidden
+                  `}
+                >
+                  <b>{ed.degree}</b>
+                  <CardEducationSummary
+                    education={ed}
+                    isLastItem={index === educationsSorted.length - 1}
+                  />
+                </div>
+                <div
+                  className={`
+                    hidden
+                    lg:block
+                  `}
+                >
+                  <CardEducationSummary
+                    education={ed}
+                    isLastItem={index === educationsSorted.length - 1}
+                  />
+                </div>
               </div>
             ))}
           </div>

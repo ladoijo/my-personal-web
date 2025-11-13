@@ -6,7 +6,12 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 type SkillItem = (typeof Skills)[keyof typeof Skills]['items'][number];
 
 const SkillItemTile = ({ Icon, name }: SkillItem) => (
-  <div className="flex h-28 w-28 flex-shrink-0 flex-col items-center gap-y-2 p-3">
+  <div
+    className={`
+      flex h-20 w-20 flex-shrink-0 flex-col items-center gap-y-2 p-3
+      lg:h-28 lg:w-28
+    `}
+  >
     <Icon className="aspect-square w-full" />
     <small>{name}</small>
   </div>
@@ -123,7 +128,10 @@ const SectionSkill = () => {
                   <div className="grid grid-cols-[auto_auto_1fr]">
                     <div
                       style={{ backgroundColor: value.color }}
-                      className="flex h-28 w-28 flex-col items-center gap-y-2 p-3"
+                      className={`
+                        flex h-20 w-20 flex-col items-center gap-y-2 p-3
+                        lg:h-28 lg:w-28
+                      `}
                     >
                       <Icon className="aspect-square w-full" />
                       <span>{value.name}</span>
