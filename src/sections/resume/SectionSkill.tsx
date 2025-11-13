@@ -50,7 +50,12 @@ const SkillItemsMarquee = ({ items }: { items: SkillItem[] }) => {
 
   return (
     <div ref={containerRef} className="relative w-full overflow-hidden bg-white">
-      <div className={`flex w-max flex-row ${shouldAnimate ? 'animate-marquee' : ''}`}>
+      <div
+        className={`
+          flex w-max flex-row
+          ${shouldAnimate ? 'animate-marquee' : ''}
+        `}
+      >
         {marqueeItems.map((item, index) => (
           <SkillItemTile key={`${item.name}-${index}`} {...item} />
         ))}
@@ -77,15 +82,15 @@ const SectionSkill = () => {
       </div>
       <div
         className={`
-              flex flex-col items-start justify-start gap-6
-              lg:flex-row
-            `}
+          flex flex-col items-start justify-start gap-6
+          lg:flex-row
+        `}
       >
         <div
           className={`
-                flex flex-1 flex-col items-center justify-between gap-4
-                lg:flex-2/6
-              `}
+            flex flex-1 flex-col items-center justify-between gap-4
+            lg:flex-2/6
+          `}
         >
           <p className="flex rounded-xl bg-white p-4">
             I bring expertise across backend development, frontend technologies, and DevOps tools to
@@ -98,17 +103,17 @@ const SectionSkill = () => {
             src="/assets/images/me3.webp"
             alt="Profile"
             className={`
-                  relative h-[26rem] w-fit rotate-3 rounded-md object-cover transition-all
-                  duration-300 ease-in-out
-                  hover:scale-120 hover:rotate-0
-                `}
+              relative h-[26rem] w-fit rotate-3 rounded-md object-cover transition-all duration-300
+              ease-in-out
+              hover:scale-120 hover:rotate-0
+            `}
           />
         </div>
         <div
           className={`
-                flex flex-1 overflow-scroll
-                lg:flex-4/6
-              `}
+            flex flex-1 overflow-scroll
+            lg:flex-4/6
+          `}
         >
           <div className="overflow-hidden rounded-xl border-2 border-black">
             {Object.entries(Skills).map(([key, value], index) => {

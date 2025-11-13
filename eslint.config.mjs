@@ -63,6 +63,12 @@ const eslintConfig = [
         }
       ],
       'better-tailwindcss/enforce-consistent-line-wrapping': ['warn', { printWidth: 100 }],
+      'better-tailwindcss/no-unregistered-classes': [
+        'error',
+        {
+          ignore: ['bg-dots', 'animate-marquee']
+        }
+      ],
       'validate-filename/naming-rules': [
         'error',
         {
@@ -90,7 +96,7 @@ const eslintConfig = [
         // tailwindcss 4: the path to the entry file of the css based tailwind config (eg: `src/globals.css`)
         entryPoint: 'src/app/globals.css',
         // tailwindcss 3: the path to the tailwind config file (eg: `tailwind.config.js`)
-        tailwindConfig: 'tailwind.config.js'
+        tailwindConfig: 'tailwind.config.ts'
       }
     }
   }

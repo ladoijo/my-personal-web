@@ -15,12 +15,22 @@ const SectionEducation = () => {
         <Title title="Educations" size="2xl" />
       </div>
       <div className="my-3 flex h-full flex-row items-stretch gap-5">
-        <div className="hidden items-center justify-center lg:flex lg:flex-1/3">
+        <div
+          className={`
+            hidden items-center justify-center
+            lg:flex lg:flex-1/3
+          `}
+        >
           <div className="h-full">
             <EducationIcon className="h-full" />
           </div>
         </div>
-        <div className="flex flex-1 flex-col lg:flex-2/3">
+        <div
+          className={`
+            flex flex-1 flex-col
+            lg:flex-2/3
+          `}
+        >
           <div className="flex w-full flex-col">
             {educationsSorted.map((ed, index) => (
               <div key={ed.id} className="grid grid-cols-[auto_auto_1fr] items-start gap-2">
