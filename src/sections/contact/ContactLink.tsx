@@ -1,5 +1,5 @@
-import React, { memo } from 'react';
 import Link from 'next/link';
+import React, { memo } from 'react';
 import styles from './contact.module.css';
 
 interface ContactLinkProps {
@@ -22,7 +22,6 @@ const ContactLink = memo(
     iconBgColor,
     iconTextColor = 'text-white'
   }: ContactLinkProps) => {
-    // Map Tailwind colors to CSS custom properties
     const getHoverBgColor = (bgClass: string): string => {
       const colorMap: Record<string, string> = {
         'bg-[#f87171]': '#f87171',

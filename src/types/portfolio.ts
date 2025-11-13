@@ -1,16 +1,16 @@
-export interface PortfolioItem {
+export interface ProjectItem {
   id: string;
   title: string;
   description: string;
   image: string;
   technologies: string[];
-  category: 'web' | 'mobile' | 'desktop' | 'design' | 'other';
+  category: 'web' | 'mobile' | 'desktop' | 'backend' | 'other';
   liveUrl?: string;
   githubUrl?: string;
   featured: boolean;
 }
 
-export interface PortfolioCategory {
+export interface ProjectCategory {
   id: string;
   label: string;
   count: number;

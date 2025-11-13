@@ -39,7 +39,7 @@ const About = () => {
           `}
         >
           <p className="text-justify">
-            I’m a Software Engineer with over 10 years of experience designing and developing
+            I’m a Software Developer with over 10 years of experience designing and developing
             scalable backend systems and robust frontend interfaces. I’ve worked in industries
             ranging from fintech, e-commerce, banking, to enterprise software, with solid expertise
             in Java, Spring Boot, React, React Native, Redis, PostgreSQL, and cloud based CI/CD
@@ -97,7 +97,7 @@ const About = () => {
           >
             <div
               className={`
-                h-48 w-full rotate-6 rounded-md border-2 border-black bg-[#cdede9]
+                h-48 w-full rotate-6 rounded-md border-2 border-black bg-[#f6f9fc]
                 transition-transform duration-300 ease-in-out
                 group-hover:scale-105 group-hover:rotate-12
               `}
@@ -105,7 +105,7 @@ const About = () => {
             <div
               className={`
                 absolute z-1 flex h-48 w-full items-center justify-center rounded-md border-2
-                border-black bg-[#2dd4bf] p-4 transition-transform duration-300 ease-in-out
+                border-black bg-[#E3F2FF] p-4 transition-transform duration-300 ease-in-out
                 group-hover:scale-105
               `}
             >
@@ -128,7 +128,7 @@ const About = () => {
           >
             <div
               className={`
-                h-48 w-full rotate-6 rounded-md border-2 border-black bg-lime-100
+                h-48 w-full rotate-6 rounded-md border-2 border-black bg-[#fcfef9]
                 transition-transform duration-300 ease-in-out
                 group-hover:scale-105 group-hover:rotate-12
               `}
@@ -136,7 +136,7 @@ const About = () => {
             <div
               className={`
                 absolute z-1 flex h-48 w-full items-center justify-center rounded-md border-2
-                border-black bg-lime-200 p-4 transition-transform duration-300 ease-in-out
+                border-black bg-[#F3FFe3] p-4 transition-transform duration-300 ease-in-out
                 group-hover:scale-105
               `}
             >

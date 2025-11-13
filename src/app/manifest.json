@@ -1,0 +1,21 @@
+{
+  "name": "Hadyan Putra Yasrizal",
+  "short_name": "HDygiDev",
+  "description": "Transforming ideas into reality through clean, efficient code. Full Stack Developer with a passion for creating application that makes an impact.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#fdebc3",
+  "icons": [
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -15,6 +15,25 @@ const nextConfig: NextConfig = {
       use: ['@svgr/webpack']
     });
     return config;
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'img.freepik.com',
+        pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'drive.google.com',
+        pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.hackerrank.com',
+        pathname: '/**'
+      }
+    ]
   }
 };
 

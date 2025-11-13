@@ -25,17 +25,19 @@ const Photo = () => {
       >
         <circle cx="60" cy="60" r="50" stroke="#0EA5A4" strokeDasharray="6 8" strokeWidth="2" />
       </svg>
-      <Image
-        height={1028}
-        width={988}
-        src="/assets/images/me3.webp"
-        alt="Profile"
-        className={`
-          relative h-[26rem] w-fit rotate-3 rounded-md object-cover transition-all duration-300
-          ease-in-out
-          hover:scale-110 hover:rotate-0
-        `}
-      />
+      <div className="relative flex h-full w-full items-center justify-center">
+        <Image
+          height={380}
+          width={1509}
+          src="/assets/images/hdygidev.webp"
+          alt="company"
+          className={`
+            w-full rounded-md object-cover transition-all duration-300 ease-in-out
+            hover:scale-110 hover:rotate-0
+            lg:h-[10rem] lg:rotate-12
+          `}
+        />
+      </div>
     </>
   );
 };

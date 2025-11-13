@@ -1,15 +1,18 @@
 interface ChipProps {
   text: string;
-  color?: string; // hex color code
+  bgColor?: string; // hex color code
+  textColor?: string; // hex color code
 }
 
-const Chip = ({ text, color = '#00bba7' }: ChipProps) => {
+const Chip = ({ text, bgColor = '#00bba7', textColor = '#101828' }: ChipProps) => {
   return (
     <div
-      style={{ backgroundColor: color }}
+      style={{ backgroundColor: bgColor }}
       className={`flex h-fit items-center justify-center rounded-sm px-1 py-0 opacity-60`}
     >
-      <small className="whitespace-nowrap text-gray-900">{text}</small>
+      <small style={{ color: textColor }} className="whitespace-nowrap">
+        {text}
+      </small>
     </div>
   );
 };

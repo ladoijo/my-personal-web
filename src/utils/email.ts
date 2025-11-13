@@ -28,7 +28,6 @@ class EmailService {
       console.error(ERR_CONFIG_MESSAGE);
     }
 
-    // Initialize EmailJS with public key
     if (this.publicKey) {
       emailjs.init(this.publicKey);
     }
@@ -45,7 +44,7 @@ class EmailService {
         from_email: data.email,
         subject: data.subject,
         message: data.message,
-        to_name: 'Hadyan Putra Yasrizal', // Replace with your name
+        to_name: 'Hadyan Putra Yasrizal',
         reply_to: data.email
       });
 
@@ -63,5 +62,4 @@ class EmailService {
   }
 }
 
-// Export singleton instance
 export const emailService = new EmailService();

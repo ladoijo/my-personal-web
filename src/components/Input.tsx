@@ -20,13 +20,13 @@ type CommonProps = {
 };
 
 type TextInputProps = CommonProps & {
-  rows?: undefined; // no rows → input mode
-  type: AllowedInputType; // required
+  rows?: number;
+  type: AllowedInputType;
 };
 
 type TextAreaProps = CommonProps & {
-  rows: number; // rows present → textarea mode
-  type?: never; // disallow/omit type
+  rows: number;
+  type?: never;
 };
 
 type InputProps = TextInputProps | TextAreaProps;
@@ -75,23 +75,18 @@ const BaseInput = (
   const isTextarea = Boolean(rows);
 
   const fieldClassName = clsx(
-    // shared visual styles
     'border-2 border-black bg-white',
     'text-black transition-all duration-300',
-    // radius/size variants
     tvInput({ rounded: inputSize ?? 'sm', height: inputSize ?? 'sm' }),
-    // shadow colors based on state
     {
       'shadow-[2px_2px_#f87171]': error && !disabled,
       'shadow-[2px_2px_black]': !error && !disabled,
       'cursor-not-allowed border-gray-300 bg-gray-100 opacity-60 shadow-none': disabled
     },
-    // focus behavior (remove blue ring, keep appropriate shadow)
     {
       'focus:shadow-[5px_5px_#f87171] focus:ring-0 focus:outline-none': error && !disabled,
       'focus:shadow-[5px_5px_black] focus:ring-0 focus:outline-none': !error && !disabled
     },
-    // extra custom classes
     className
   );
 
