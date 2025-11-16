@@ -15,9 +15,9 @@ export interface EmailResponse {
 const ERR_CONFIG_MESSAGE = 'EmailJS configuration is incomplete';
 
 class EmailService {
-  private serviceId: string;
-  private templateId: string;
-  private publicKey: string;
+  private readonly serviceId: string;
+  private readonly templateId: string;
+  private readonly publicKey: string;
 
   constructor() {
     this.serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '';

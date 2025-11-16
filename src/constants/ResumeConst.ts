@@ -32,110 +32,132 @@ import TailwindIcon from '@/assets/icons/tailwindcss.svg';
 import ToolsIcon from '@/assets/icons/tools.svg';
 import TypeScriptIcon from '@/assets/icons/typescript.svg';
 import { IconComponent } from '@/types/icon';
-import { ProjectCategory, ProjectItem } from '@/types/portfolio';
 
-export const portfolioItems: ProjectItem[] = [
-  {
-    id: '1',
-    title: 'E-Commerce Platform',
-    description:
-      'A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, payment processing, inventory management, and admin dashboard.',
-    image:
-      'https://img.freepik.com/free-photo/cartoon-lifestyle-summertime-scene_23-2151068217.jpg?semt=ais_incoming&w=740&q=80',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Tailwind CSS'],
-    category: 'web',
-    liveUrl: 'https://example-ecommerce.com',
-    githubUrl: 'https://github.com/username/ecommerce-platform',
-    featured: true
-  },
-  {
-    id: '2',
-    title: 'Mobile Banking App',
-    description:
-      'A secure mobile banking application for iOS and Android with biometric authentication, transaction history, and real-time notifications.',
-    image:
-      'https://img.freepik.com/free-photo/cartoon-lifestyle-summertime-scene_23-2151068217.jpg?semt=ais_incoming&w=740&q=80',
-    technologies: ['React Native', 'TypeScript', 'Firebase', 'Redux'],
-    category: 'mobile',
-    liveUrl: 'https://apps.apple.com/banking-app',
-    githubUrl: 'https://github.com/username/banking-app',
-    featured: true
-  },
-  {
-    id: '3',
-    title: 'Task Management Dashboard',
-    description:
-      'A collaborative task management tool with real-time updates, team collaboration features, and project tracking capabilities.',
-    image:
-      'https://img.freepik.com/free-photo/cartoon-lifestyle-summertime-scene_23-2151068217.jpg?semt=ais_incoming&w=740&q=80',
-    technologies: ['Vue.js', 'Express', 'Socket.io', 'PostgreSQL'],
-    category: 'web',
-    liveUrl: 'https://taskmanager.example.com',
-    githubUrl: 'https://github.com/username/task-manager',
-    featured: false
-  },
-  {
-    id: '4',
-    title: 'Weather Desktop App',
-    description:
-      'A cross-platform desktop application for weather forecasting with location-based services and customizable widgets.',
-    image:
-      'https://img.freepik.com/free-photo/cartoon-lifestyle-summertime-scene_23-2151068217.jpg?semt=ais_incoming&w=740&q=80',
-    technologies: ['Electron', 'JavaScript', 'OpenWeather API'],
-    category: 'desktop',
-    githubUrl: 'https://github.com/username/weather-app',
-    featured: false
-  },
-  {
-    id: '5',
-    title: 'UI/UX Design System',
-    description:
-      'A comprehensive design system with reusable components, style guide, and documentation for consistent user experiences.',
-    image:
-      'https://img.freepik.com/free-photo/cartoon-lifestyle-summertime-scene_23-2151068217.jpg?semt=ais_incoming&w=740&q=80',
-    technologies: ['Figma', 'Storybook', 'CSS', 'Design Tokens'],
-    category: 'backend',
-    liveUrl: 'https://design-system.example.com',
-    featured: false
-  },
-  {
-    id: '6',
-    title: 'AI Chatbot Platform',
-    description:
-      'An intelligent chatbot platform with natural language processing, multi-language support, and analytics dashboard.',
-    image:
-      'https://img.freepik.com/free-photo/cartoon-lifestyle-summertime-scene_23-2151068217.jpg?semt=ais_incoming&w=740&q=80',
-    technologies: ['Python', 'TensorFlow', 'FastAPI', 'React'],
-    category: 'web',
-    liveUrl: 'https://chatbot.example.com',
-    githubUrl: 'https://github.com/username/ai-chatbot',
-    featured: true
-  }
-];
+export interface IPortfolioProject {
+  label: string;
+  items: {
+    id: number;
+    slug: string;
+    title: string;
+    description: string;
+    urlImage: string;
+    stacks: string[];
+    urlLive?: string;
+    urlGitHub?: string;
+  }[];
+}
 
-export const projectCategories: ProjectCategory[] = [
-  { id: 'all', label: 'All Projects', count: portfolioItems.length },
-  {
-    id: 'backend',
+export const PortfolioProjects: Record<string, IPortfolioProject> = {
+  backend: {
     label: 'Backend',
-    count: portfolioItems.filter((item) => item.category === 'backend').length
+    items: [
+      {
+        id: 1,
+        slug: 'wonderful-quran-api',
+        title: 'Wonderful Quran API',
+        description:
+          'Designed and developed Wonderful Quran API service used by Wonderful Quran web.',
+        urlImage: '',
+        stacks: ['TypeScript', 'Node.js', 'Express.js', 'AWS Lambda'],
+        urlLive: 'https://wonderful-quran.netlify.app/',
+        urlGitHub: 'https://github.com/ladoijo/wonderful-quran-be'
+      },
+      {
+        id: 2,
+        slug: 'time-deposit-bank-account',
+        title: 'Time Deposit Bank Account',
+        description:
+          'Developed Time Deposit feature used by Hijra Bank customers for savings and investment.',
+        urlImage: '',
+        stacks: ['Java', 'Spring Boot', 'PostgreSQL'],
+        urlLive:
+          'https://play.google.com/store/apps/details?id=com.bank_hijra&pcampaignid=web_share'
+      },
+      {
+        id: 3,
+        slug: 'otp-service',
+        title: 'OTP Service',
+        description:
+          'Designed and developed OTP service used by ALAMI app users for security purposes.',
+        urlImage: '',
+        stacks: ['Java', 'Spring Boot', 'PostgreSQL'],
+        urlLive:
+          'https://play.google.com/store/apps/details?id=com.alami_funder&pcampaignid=web_share'
+      },
+      {
+        id: 4,
+        slug: 'p2p-education-module',
+        title: 'P2P Education Module',
+        description:
+          'Designed and developed P2P Education module used by ALAMI app users to help educate users about ALAMI P2P.',
+        urlImage: '',
+        stacks: ['Java', 'Spring Boot', 'PostgreSQL'],
+        urlLive:
+          'https://play.google.com/store/apps/details?id=com.alami_funder&pcampaignid=web_share'
+      },
+      {
+        id: 5,
+        slug: 'sfmonitor-agent-connector-amq',
+        title: 'SFMonitor Agent, Connector & AMQ',
+        description:
+          'SFMonitor consists of three integrated modules: SFMonitor Agent, which listens to server activity, records request histories, monitors system and JVM resources, provides thread and stack-trace controls, and sends request/response events to RabbitMQ; SFMonitor AMQ, which consumes these messages from RabbitMQ and stores them as historical data in the database; and SFMonitor Bridge, which acts as a connector between the SFMonitor Dashboard and multiple SFMonitor Agents inside Docker containers, routing dashboard requests to the correct agent based on container IP or host.',
+        urlImage: '',
+        stacks: ['Java', 'Spring Boot', 'RabbitMQ', 'MySQL']
+      }
+    ]
   },
-  {
-    id: 'web',
+  web: {
     label: 'Website',
-    count: portfolioItems.filter((item) => item.category === 'web').length
+    items: [
+      {
+        id: 1,
+        slug: 'wonderful-quran-web',
+        title: 'Wonderful Quran Web',
+        description:
+          'Designed and developed Wonderful Quran web with fast navigation, verse exploration, and a clean study interface',
+        urlImage: '',
+        stacks: ['TypeScript', 'React.js', 'Next.js', 'Tailwind CSS', 'Radix UI'],
+        urlLive: 'https://wonderful-quran.netlify.app/',
+        urlGitHub: 'https://github.com/ladoijo/wonderful-quran-fe'
+      },
+      {
+        id: 2,
+        slug: 'my-personal-web',
+        title: 'My Personal Web',
+        description:
+          'A personal portfolio website showcasing my projects, skills, and professional experience. Built with modern web technologies.',
+        urlImage: '',
+        stacks: ['TypeScript', 'React.js', 'Next.js', 'Tailwind CSS'],
+        urlLive: 'https://hdygidev.netlify.app/',
+        urlGitHub: 'https://github.com/ladoijo/my-personal-web'
+      },
+      {
+        id: 3,
+        slug: 'sfmonitor-dashboard',
+        title: 'SFMonitor Dashboard',
+        description:
+          'Designed and developed monitoring dashboard equipped with features to monitor requests, responses, resource usage, and more from every server, VM, and Docker container service related to Lucee and ColdFusion applications.',
+        urlImage: '',
+        stacks: ['Spring MVC', 'CSS', 'JavaScript', 'jQuery', 'Bootstrap']
+      }
+    ]
   },
-  {
-    id: 'mobile',
-    label: 'Mobile Apps',
-    count: portfolioItems.filter((item) => item.category === 'mobile').length
-  },
-  {
-    id: 'desktop',
-    label: 'Desktop Apps',
-    count: portfolioItems.filter((item) => item.category === 'desktop').length
+  mobile: {
+    label: 'Mobile',
+    items: [
+      {
+        id: 1,
+        slug: 'navees',
+        title: 'Navees',
+        description:
+          'Developed app specializing in the buying and selling of gold bars, facilitates online gold trading using the wakalah contract, ensuring transactions align with Sharia principles for a secure and ethical experience.',
+        urlImage: '',
+        stacks: ['TypeScript', 'React Native', 'Redux', 'RxJS', 'NativeBase'],
+        urlLive: 'https://play.google.com/store/apps/details?id=com.navees&pcampaignid=web_share'
+      }
+    ]
   }
-];
+};
 
 export interface ISkill {
   [key: string]: {
