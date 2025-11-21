@@ -82,7 +82,7 @@ const NavBar = () => {
             <span
               className={`
                 absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full border-2 border-black
-                bg-[var(--color-7)] px-3 py-1 text-xs font-semibold text-black shadow-lg
+                bg-[var(--color-6)] px-3 py-1 text-xs font-semibold text-black shadow-lg
               `}
             >
               #OPENTOWORK

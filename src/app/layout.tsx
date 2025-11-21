@@ -44,7 +44,7 @@ export default function RootLayout({
         <NavBar />
         <main
           className={`
-            flex min-h-screen flex-col bg-[var(--color-6)]
+            flex min-h-screen flex-col bg-white
             lg:pl-60
           `}
         >

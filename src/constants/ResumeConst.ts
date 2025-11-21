@@ -107,7 +107,7 @@ export const PortfolioProjects: Record<string, IPortfolioProject> = {
     ]
   },
   web: {
-    label: 'Website',
+    label: 'Web',
     items: [
       {
         id: 1,

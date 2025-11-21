@@ -1,5 +1,5 @@
-import CompanyIcon from '@/assets/icons/company.svg';
-import ExperienceIcon from '@/assets/icons/experience.svg';
+import CompanyIcon from '@/assets/icons/badge.svg';
+import ExperienceIcon from '@/assets/icons/calendar.svg';
 import Chip from '@/components/Chip';
 import Paper from '@/components/Paper';
 import { WorkExperiences } from '@/constants/HistoriesConst';

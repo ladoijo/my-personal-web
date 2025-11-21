@@ -10,8 +10,7 @@
   --color-3: #f3ffe3;
   --color-4: #f9c9c9;
   --color-5: #a2cef1;
-  --color-6: #ffffff;
-  --color-7: #7fcec6;
+  --color-6: #7fcec6;
 }
 
 @theme inline {
@@ -51,6 +50,11 @@
   .bg-dots {
     background-image: radial-gradient(circle, rgba(0, 0, 0, 0.2) 1px, transparent 1px);
     background-size: 15px 15px;
+    background-position: 0 0;
+  }
+  .bg-lines {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 1px, transparent 1px);
+    background-size: 32px 32px;
     background-position: 0 0;
   }
   .bg-paper {

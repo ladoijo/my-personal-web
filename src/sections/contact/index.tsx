@@ -170,7 +170,7 @@ const Contact = memo(() => {
               )}
             </div>
             <Button
-              bgColor="var(--color-7)"
+              bgColor="var(--color-6)"
               className={`
                 h-12 w-full
                 sm:w-auto
