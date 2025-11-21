@@ -36,17 +36,17 @@ const SectionEducation = () => {
                 key={ed.id}
                 className={`
                   grid grid-cols-[auto_1fr] items-start gap-2
-                  lg:grid-cols-[auto_auto_1fr]
+                  lg:grid-cols-[140px_auto_1fr]
                 `}
               >
-                <div
+                <b
                   className={`
-                    hidden
+                    hidden text-right
                     lg:block
                   `}
                 >
-                  <b>{ed.degree}</b>
-                </div>
+                  {ed.degree}
+                </b>
                 <VerticalLineConnector type="education" />
                 <div
                   className={`

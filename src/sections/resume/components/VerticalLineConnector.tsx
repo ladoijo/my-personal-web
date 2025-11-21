@@ -4,7 +4,9 @@ import BriefcaseIcon from '@/assets/icons/portfolio.svg';
 const VerticalLineConnector = ({ type }: { type: 'work' | 'education' }) => (
   <div className="relative flex h-full flex-col items-center">
     <div
-      className={`z-11 flex h-7 w-7 items-center justify-center rounded-full border-2 bg-[#7fcec6]`}
+      className={`
+        z-11 flex h-7 w-7 items-center justify-center rounded-full border-2 bg-[var(--color-7)]
+      `}
     >
       {type === 'work' ? (
         <BriefcaseIcon className="h-4 w-4 items-center justify-center text-black" />

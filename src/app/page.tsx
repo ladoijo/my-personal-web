@@ -1,7 +1,9 @@
 import About from '@/sections/about';
 import Contact from '@/sections/contact';
 import Home from '@/sections/home';
+import Portfolio from '@/sections/portfolio';
 import Resume from '@/sections/resume';
+import Service from '@/sections/service';
 
 export default function Page() {
   return (
@@ -9,8 +11,8 @@ export default function Page() {
       <Home />
       <About />
       <Resume />
-      {/* <Service />
-      <Portfolio /> */}
+      <Service />
+      <Portfolio />
       <Contact />
     </div>
   );

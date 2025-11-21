@@ -170,7 +170,7 @@ const Contact = memo(() => {
               )}
             </div>
             <Button
-              bgColor="#7fcec6"
+              bgColor="var(--color-7)"
               className={`
                 h-12 w-full
                 sm:w-auto
@@ -231,7 +231,7 @@ const Contact = memo(() => {
                   iconName={AccountUrls.mail.name}
                   title="Email"
                   description={AccountUrls.mail.placeholder}
-                  iconBgColor="bg-[#f87171]"
+                  iconBgColor="#f87171"
                 />
                 <ContactLink
                   href={AccountUrls.phone.url}
@@ -239,7 +239,7 @@ const Contact = memo(() => {
                   iconName={AccountUrls.phone.name}
                   title="Phone"
                   description={AccountUrls.phone.placeholder}
-                  iconBgColor="bg-[#2dd4bf]"
+                  iconBgColor="#2dd4bf"
                 />
               </div>
             </section>
@@ -259,7 +259,7 @@ const Contact = memo(() => {
                   iconName={AccountUrls.linkedin.name}
                   title="LinkedIn"
                   description={AccountUrls.linkedin.placeholder}
-                  iconBgColor="bg-[#3b82f6]"
+                  iconBgColor="#3b82f6"
                 />
                 <ContactLink
                   href={AccountUrls.whatsapp.url}
@@ -267,7 +267,7 @@ const Contact = memo(() => {
                   iconName={AccountUrls.whatsapp.name}
                   title="WhatsApp"
                   description={AccountUrls.whatsapp.placeholder}
-                  iconBgColor="bg-[#00bba7]"
+                  iconBgColor="#00bba7"
                 />
               </div>
             </section>
@@ -287,7 +287,7 @@ const Contact = memo(() => {
                   iconName={AccountUrls.upwork.name}
                   title="Upwork"
                   description={AccountUrls.upwork.placeholder}
-                  iconBgColor="bg-[#26ab15]"
+                  iconBgColor="#26ab15"
                 />
                 <ContactLink
                   href={AccountUrls.contra.url}
@@ -295,8 +295,8 @@ const Contact = memo(() => {
                   iconName={AccountUrls.contra.name}
                   title="Contra"
                   description={AccountUrls.contra.placeholder}
-                  iconBgColor="bg-[#4b5563]"
-                  iconTextColor="text-[#fcc462]"
+                  iconBgColor="#4b5563"
+                  iconTextColor="#fcc462"
                 />
               </div>
             </section>

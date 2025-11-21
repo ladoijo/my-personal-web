@@ -40,7 +40,7 @@ export const WorkExperiences: IWorkExperience[] = [
       'Spring Boot',
       'Spring MVC'
     ],
-    color: '#a2cef1'
+    color: 'var(--color-5)'
   },
   {
     id: 2,
@@ -69,7 +69,7 @@ export const WorkExperiences: IWorkExperience[] = [
       'Redis',
       'Spring Boot'
     ],
-    color: '#f9c9c9'
+    color: 'var(--color-4)'
   },
   {
     id: 3,
@@ -103,7 +103,7 @@ export const WorkExperiences: IWorkExperience[] = [
       'Vuex',
       'styled-components'
     ],
-    color: '#F3FFe3'
+    color: 'var(--color-3)'
   },
   {
     id: 4,
@@ -119,7 +119,7 @@ export const WorkExperiences: IWorkExperience[] = [
       'Authored internal onboarding and technical documentation, reducing ramp up time by 60%'
     ],
     stacks: ['CI/CD', 'Docker', 'Git', 'Java', 'Maven', 'PostgreSQL', 'Spring Boot', 'Spring JPA'],
-    color: '#E3F2FF'
+    color: 'var(--color-2)'
   },
   {
     id: 5,
@@ -139,7 +139,7 @@ export const WorkExperiences: IWorkExperience[] = [
       'React Native',
       'Tailwind CSS'
     ],
-    color: '#fdebc3'
+    color: 'var(--color-1)'
   }
 ];
 
@@ -194,7 +194,7 @@ export const Certificates: ICertificate[] = [
     institution: 'PeopleCert',
     publishedDate: 'May 2017',
     url: CertificateUrls.qsd,
-    color: '#F3FFe3'
+    color: 'var(--color-3)'
   },
   {
     id: 2,
@@ -210,6 +210,6 @@ export const Certificates: ICertificate[] = [
     institution: 'HackerRank',
     publishedDate: 'Jul 2025',
     url: CertificateUrls.react,
-    color: '#E3F2FF'
+    color: 'var(--color-2)'
   }
 ];

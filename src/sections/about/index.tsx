@@ -1,5 +1,6 @@
 import CompanyIcon from '@/assets/icons/company.svg';
 import ExperienceIcon from '@/assets/icons/experience.svg';
+import Chip from '@/components/Chip';
 import Paper from '@/components/Paper';
 import { WorkExperiences } from '@/constants/HistoriesConst';
 import { NavItems } from '@/constants/NavItemsConst';
@@ -61,24 +62,13 @@ const About = () => {
               sm:grid-cols-[6rem_1fr_6rem_1fr] sm:grid-rows-2
             `}
           >
-            <p className={`h-fit w-fit rounded-sm bg-blue-600 px-1.5 font-semibold text-white`}>
-              Name
-            </p>
+            <Chip text="Name" size="md" textColor="white" />
             <p className={`border-b-1 border-dotted`}>Hadyan Putra Yasrizal</p>
-
-            <p className={`h-fit w-fit rounded-sm bg-blue-600 px-1.5 font-semibold text-white`}>
-              Freelance
-            </p>
+            <Chip text="Freelance" size="md" textColor="white" />
             <p className={`border-b-1 border-dotted text-green-600`}>Available</p>
-
-            <p className={`h-fit w-fit rounded-sm bg-blue-600 px-1.5 font-semibold text-white`}>
-              Nationality
-            </p>
+            <Chip text="Nationality" size="md" textColor="white" />
             <p className={`border-b-1 border-dotted`}>Indonesia</p>
-
-            <p className={`h-fit w-fit rounded-sm bg-blue-600 px-1.5 font-semibold text-white`}>
-              Location
-            </p>
+            <Chip text="Location" size="md" textColor="white" />
             <p className={`border-b-1 border-dotted`}>Bandung Regency, Indonesia</p>
           </div>
         </div>
@@ -105,7 +95,7 @@ const About = () => {
             <div
               className={`
                 absolute z-1 flex h-48 w-full items-center justify-center rounded-md border-2
-                border-black bg-[#E3F2FF] p-4 transition-transform duration-300 ease-in-out
+                border-black bg-[var(--color-2)] p-4 transition-transform duration-300 ease-in-out
                 group-hover:scale-105
               `}
             >
@@ -136,7 +126,7 @@ const About = () => {
             <div
               className={`
                 absolute z-1 flex h-48 w-full items-center justify-center rounded-md border-2
-                border-black bg-[#F3FFe3] p-4 transition-transform duration-300 ease-in-out
+                border-black bg-[var(--color-3)] p-4 transition-transform duration-300 ease-in-out
                 group-hover:scale-105
               `}
             >
