@@ -40,7 +40,7 @@ const CardWorkSummary = ({
           <small>Stack:</small>
           <div className="flex flex-wrap items-center gap-1">
             {workExperience.stacks?.map((stack) => (
-              <Chip size="xs" key={stack} text={stack} textColor="#FFFFFF" />
+              <Chip size="xs" key={stack} text={stack} textColor="var(--color-6)" />
             ))}
           </div>
         </div>

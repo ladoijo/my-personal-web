@@ -3,6 +3,15 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Color Palette */
+  --color-1: #fdebc3;
+  --color-2: #e3f2ff;
+  --color-3: #f3ffe3;
+  --color-4: #f9c9c9;
+  --color-5: #a2cef1;
+  --color-6: #ffffff;
+  --color-7: #7fcec6;
 }
 
 @theme inline {

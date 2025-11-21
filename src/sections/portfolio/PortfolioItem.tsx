@@ -2,25 +2,19 @@ import Button from '@/components/Button';
 import Chip from '@/components/Chip';
 import ImageSafe from '@/components/ImageSafe';
 import { IPortfolioProject } from '@/constants/ResumeConst';
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 interface PortfolioItemProps {
   bgColor?: string;
   item: IPortfolioProject['items'][0];
 }
 
-const PortfolioItem: React.FC<PortfolioItemProps> = ({ bgColor, item }) => {
+const PortfolioItem: React.FC<PortfolioItemProps> = ({ bgColor = 'var(--color-1)', item }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [descriptionHeight, setDescriptionHeight] = useState(0);
   const descriptionRef = useRef<HTMLDivElement>(null);
   const hasExternalLink = Boolean(item.urlLive || item.urlGitHub);
   const collapsedHeight = 60;
-  const containerBg = useMemo(() => {
-    const colors = ['#fdebc3', '#E3F2FF', '#F3FFe3', '#f9c9c9', '#a2cef1', '#ffffff', '#7fcec6'];
-    const index =
-      item.title.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) % colors.length;
-    return colors[index];
-  }, [item.title]);
 
   const handleOpenLink = (url?: string) => {
     if (!url) return;
@@ -42,26 +36,26 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ bgColor, item }) => {
   return (
     <div
       className={`
-        group mb-8 cursor-pointer break-inside-avoid-column overflow-hidden rounded-xl border-2 border-black p-3 ${bgColor}
-        transition-all duration-300
-        hover:-translate-y-1
+        group mb-8 cursor-pointer break-inside-avoid-column overflow-hidden rounded-xl border-2 border-black p-3
+        transition-all duration-300 hover:-translate-y-1
       `}
+      style={{ backgroundColor: bgColor }}
       onClick={() => setIsExpanded(!isExpanded)}
     >
-      <div className="flex h-full w-full flex-col rounded-lg border-2 border-black bg-white">
+      <div className="flex h-full w-full flex-col overflow-hidden rounded-lg border-2 border-black bg-black">
         <div className="relative flex min-h-48 w-full overflow-hidden">
           <ImageSafe
             src={item.urlImage}
             alt={item.title}
-            className={`
-              bg-black object-contain transition-transform duration-300
-              group-hover:scale-105
+            className={`object-contain transition-transform duration-300
+              group-hover:scale-120
             `}
-            fill
+            width={1024}
+            height={768}
           />
         </div>
 
-        <div className="flex h-full flex-col justify-between gap-2 p-6">
+        <div className="flex h-full flex-col justify-between gap-2 border-t-2 bg-white p-6">
           <div className="flex flex-col gap-2">
             <h3 className="text-xl font-semibold text-gray-800">{item.title}</h3>
             <div
@@ -87,7 +81,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ bgColor, item }) => {
                 {hasExternalLink && item.urlGitHub && (
                   <Button
                     className="flex-1"
-                    bgColor="#f9c9c9"
+                    bgColor="var(--color-4)"
                     onClick={() => handleOpenLink(item.urlGitHub)}
                   >
                     GitHub
@@ -101,7 +95,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ bgColor, item }) => {
           </div>
           <div className="mt-2 flex flex-row flex-wrap gap-2">
             {item.stacks.map((stack) => (
-              <Chip key={stack} text={stack} textColor="#FFFFFF" />
+              <Chip key={stack} text={stack} textColor="var(--color-6)" />
             ))}
           </div>
         </div>

@@ -91,7 +91,7 @@ const Home = () => {
             <Button bgColor="#7fcec6" className="h-10 w-30" onClick={handleGetInTouchClick}>
               Get in Touch
             </Button>
-            <Button bgColor="#f9c9c9" className="h-10 w-36" onClick={handleSeeMyWorksClick}>
+            <Button bgColor="var(--color-4)" className="h-10 w-36" onClick={handleSeeMyWorksClick}>
               See My Works
             </Button>
           </div>

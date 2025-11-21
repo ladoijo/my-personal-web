@@ -57,7 +57,7 @@ export const PortfolioProjects: Record<string, IPortfolioProject> = {
         title: 'Wonderful Quran API',
         description:
           'Designed and developed Wonderful Quran API service used by Wonderful Quran web.',
-        urlImage: '',
+        urlImage: 'https://drive.google.com/uc?export=view&id=1GzzZ0TLTPv6M8qD2HUwBWLTCbEgD2Wth',
         stacks: ['TypeScript', 'Node.js', 'Express.js', 'AWS Lambda'],
         urlLive: 'https://wonderful-quran.netlify.app/',
         urlGitHub: 'https://github.com/ladoijo/wonderful-quran-be'
@@ -67,30 +67,30 @@ export const PortfolioProjects: Record<string, IPortfolioProject> = {
         slug: 'time-deposit-bank-account',
         title: 'Time Deposit Bank Account',
         description:
-          'Developed Time Deposit feature used by Hijra Bank customers for savings and investment.',
-        urlImage: '',
+          'Developed Time Deposit backend service used by Hijra Bank customers for savings and investment.',
         stacks: ['Java', 'Spring Boot', 'PostgreSQL'],
+        urlImage: 'https://drive.google.com/uc?export=view&id=1mQMnP_mKFERosn3AFoH1XrAK4dAMF3cz',
         urlLive:
           'https://play.google.com/store/apps/details?id=com.bank_hijra&pcampaignid=web_share'
       },
-      {
-        id: 3,
-        slug: 'otp-service',
-        title: 'OTP Service',
-        description:
-          'Designed and developed OTP service used by ALAMI app users for security purposes.',
-        urlImage: '',
-        stacks: ['Java', 'Spring Boot', 'PostgreSQL'],
-        urlLive:
-          'https://play.google.com/store/apps/details?id=com.alami_funder&pcampaignid=web_share'
-      },
+      // {
+      //   id: 3,
+      //   slug: 'otp-service',
+      //   title: 'OTP Service',
+      //   description:
+      //     'Designed and developed OTP backend service used by ALAMI app users for security purposes.',
+      //   urlImage: '',
+      //   stacks: ['Java', 'Spring Boot', 'PostgreSQL'],
+      //   urlLive:
+      //     'https://play.google.com/store/apps/details?id=com.alami_funder&pcampaignid=web_share'
+      // },
       {
         id: 4,
         slug: 'p2p-education-module',
         title: 'P2P Education Module',
         description:
-          'Designed and developed P2P Education module used by ALAMI app users to help educate users about ALAMI P2P.',
-        urlImage: '',
+          'Designed and developed P2P Education module backend service used by ALAMI app users to help educate users about ALAMI P2P.',
+        urlImage: 'https://drive.google.com/uc?export=view&id=1GJryAJzlHQ1c5IWEZEwREm38RYhO2SZk',
         stacks: ['Java', 'Spring Boot', 'PostgreSQL'],
         urlLive:
           'https://play.google.com/store/apps/details?id=com.alami_funder&pcampaignid=web_share'
@@ -100,8 +100,8 @@ export const PortfolioProjects: Record<string, IPortfolioProject> = {
         slug: 'sfmonitor-agent-connector-amq',
         title: 'SFMonitor Agent, Connector & AMQ',
         description:
-          'SFMonitor consists of three integrated modules: SFMonitor Agent, which listens to server activity, records request histories, monitors system and JVM resources, provides thread and stack-trace controls, and sends request/response events to RabbitMQ; SFMonitor AMQ, which consumes these messages from RabbitMQ and stores them as historical data in the database; and SFMonitor Bridge, which acts as a connector between the SFMonitor Dashboard and multiple SFMonitor Agents inside Docker containers, routing dashboard requests to the correct agent based on container IP or host.',
-        urlImage: '',
+          'SFMonitor consists of three integrated modules. SFMonitor Agent, which listens to server activity, records request histories, monitors system and JVM resources, provides thread and stack-trace controls, and sends request/response events to RabbitMQ. SFMonitor AMQ, which consumes these messages from RabbitMQ and stores them as historical data in the database. And SFMonitor Bridge, which acts as a connector between the SFMonitor Dashboard and multiple SFMonitor Agents inside Docker containers, routing dashboard requests to the correct agent based on container IP or host.',
+        urlImage: 'https://drive.google.com/uc?export=view&id=1bkEbAFrpg3E5wLeQdHha3CvLGZW5CDCX',
         stacks: ['Java', 'Spring Boot', 'RabbitMQ', 'MySQL']
       }
     ]
@@ -115,7 +115,7 @@ export const PortfolioProjects: Record<string, IPortfolioProject> = {
         title: 'Wonderful Quran Web',
         description:
           'Designed and developed Wonderful Quran web with fast navigation, verse exploration, and a clean study interface',
-        urlImage: '',
+        urlImage: 'https://drive.google.com/uc?export=view&id=1GzzZ0TLTPv6M8qD2HUwBWLTCbEgD2Wth',
         stacks: ['TypeScript', 'React.js', 'Next.js', 'Tailwind CSS', 'Radix UI'],
         urlLive: 'https://wonderful-quran.netlify.app/',
         urlGitHub: 'https://github.com/ladoijo/wonderful-quran-fe'
@@ -126,7 +126,7 @@ export const PortfolioProjects: Record<string, IPortfolioProject> = {
         title: 'My Personal Web',
         description:
           'A personal portfolio website showcasing my projects, skills, and professional experience. Built with modern web technologies.',
-        urlImage: '',
+        urlImage: 'https://drive.google.com/uc?export=view&id=1URAWVxm1Haoae4itIgPwBEz_yh99HH1H',
         stacks: ['TypeScript', 'React.js', 'Next.js', 'Tailwind CSS'],
         urlLive: 'https://hdygidev.netlify.app/',
         urlGitHub: 'https://github.com/ladoijo/my-personal-web'
@@ -137,7 +137,7 @@ export const PortfolioProjects: Record<string, IPortfolioProject> = {
         title: 'SFMonitor Dashboard',
         description:
           'Designed and developed monitoring dashboard equipped with features to monitor requests, responses, resource usage, and more from every server, VM, and Docker container service related to Lucee and ColdFusion applications.',
-        urlImage: '',
+        urlImage: 'https://drive.google.com/uc?export=view&id=1tNCpnJzKUCs3YiccZqjhkbU6u0KQSOyM',
         stacks: ['Spring MVC', 'CSS', 'JavaScript', 'jQuery', 'Bootstrap']
       }
     ]
@@ -151,7 +151,7 @@ export const PortfolioProjects: Record<string, IPortfolioProject> = {
         title: 'Navees',
         description:
           'Developed app specializing in the buying and selling of gold bars, facilitates online gold trading using the wakalah contract, ensuring transactions align with Sharia principles for a secure and ethical experience.',
-        urlImage: '',
+        urlImage: 'https://drive.google.com/uc?export=view&id=1SIS7uIjIJ0Z9v5AEeV-KWPz9hiGdpRTY',
         stacks: ['TypeScript', 'React Native', 'Redux', 'RxJS', 'NativeBase'],
         urlLive: 'https://play.google.com/store/apps/details?id=com.navees&pcampaignid=web_share'
       }
@@ -194,7 +194,7 @@ export const Skills: ISkill = {
   backend: {
     name: 'Backend',
     Icon: BackendIcon,
-    color: '#E3F2FF',
+    color: 'var(--color-2)',
     items: [
       {
         name: 'Spring',
@@ -225,7 +225,7 @@ export const Skills: ISkill = {
   frontend: {
     name: 'Frontend',
     Icon: FrontendIcon,
-    color: '#F3FFe3',
+    color: 'var(--color-3)',
     items: [
       {
         name: 'HTML',
@@ -264,7 +264,7 @@ export const Skills: ISkill = {
   database: {
     name: 'Database',
     Icon: DatabaseIcon,
-    color: '#f9c9c9',
+    color: 'var(--color-4)',
     items: [
       {
         name: 'MySQL',
@@ -291,7 +291,7 @@ export const Skills: ISkill = {
   others: {
     name: 'Others',
     Icon: ToolsIcon,
-    color: '#a2cef1',
+    color: 'var(--color-5)',
     items: [
       {
         name: 'Docker',

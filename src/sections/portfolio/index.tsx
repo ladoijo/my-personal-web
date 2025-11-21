@@ -7,6 +7,12 @@ import { IPortfolioProject, PortfolioProjects } from '@/constants/ResumeConst';
 import { useMemo, useRef, useState } from 'react';
 import PortfolioItem from './PortfolioItem';
 
+const categoryColors: Record<string, string> = {
+  backend: 'var(--color-5)',
+  web: 'var(--color-3)',
+  mobile: 'var(--color-4)'
+};
+
 const Portfolio = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const portfolioRef = useRef<HTMLDivElement>(null);
@@ -60,9 +66,20 @@ const Portfolio = () => {
                 lg:columns-3
               `}
             >
-              {filteredItems.map((item) => (
-                <PortfolioItem key={item.slug} item={item} />
-              ))}
+              {filteredItems.map((item) => {
+                const category =
+                  Object.entries(PortfolioProjects).find(([_, project]) =>
+                    project.items.some((i) => i.slug === item.slug)
+                  )?.[0] || 'all';
+
+                return (
+                  <PortfolioItem
+                    key={item.slug}
+                    item={item}
+                    bgColor={categoryColors[category] || categoryColors['all']}
+                  />
+                );
+              })}
             </div>
           ) : (
             <div className="py-12 text-center text-gray-600">

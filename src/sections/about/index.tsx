@@ -95,7 +95,7 @@ const About = () => {
             <div
               className={`
                 absolute z-1 flex h-48 w-full items-center justify-center rounded-md border-2
-                border-black bg-[#E3F2FF] p-4 transition-transform duration-300 ease-in-out
+                border-black bg-[var(--color-2)] p-4 transition-transform duration-300 ease-in-out
                 group-hover:scale-105
               `}
             >
@@ -126,7 +126,7 @@ const About = () => {
             <div
               className={`
                 absolute z-1 flex h-48 w-full items-center justify-center rounded-md border-2
-                border-black bg-[#F3FFe3] p-4 transition-transform duration-300 ease-in-out
+                border-black bg-[var(--color-3)] p-4 transition-transform duration-300 ease-in-out
                 group-hover:scale-105
               `}
             >
