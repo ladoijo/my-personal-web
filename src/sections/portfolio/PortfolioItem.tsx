@@ -36,18 +36,24 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ bgColor = 'var(--color-1)
   return (
     <div
       className={`
-        group mb-8 cursor-pointer break-inside-avoid-column overflow-hidden rounded-xl border-2 border-black p-3
-        transition-all duration-300 hover:-translate-y-1
+        group mb-8 cursor-pointer break-inside-avoid-column overflow-hidden rounded-xl border-2
+        border-black p-3 transition-all duration-300
+        hover:-translate-y-1
       `}
       style={{ backgroundColor: bgColor }}
       onClick={() => setIsExpanded(!isExpanded)}
     >
-      <div className="flex h-full w-full flex-col overflow-hidden rounded-lg border-2 border-black bg-black">
+      <div
+        className={`
+          flex h-full w-full flex-col overflow-hidden rounded-lg border-2 border-black bg-black
+        `}
+      >
         <div className="relative flex min-h-48 w-full overflow-hidden">
           <ImageSafe
             src={item.urlImage}
             alt={item.title}
-            className={`object-contain transition-transform duration-300
+            className={`
+              object-contain transition-transform duration-300
               group-hover:scale-120
             `}
             width={1024}
@@ -59,7 +65,10 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ bgColor = 'var(--color-1)
           <div className="flex flex-col gap-2">
             <h3 className="text-xl font-semibold text-gray-800">{item.title}</h3>
             <div
-              className="relative flex flex-col items-start overflow-hidden transition-[max-height] duration-500 ease-in-out"
+              className={`
+                relative flex flex-col items-start overflow-hidden transition-[max-height]
+                duration-500 ease-in-out
+              `}
               ref={descriptionRef}
               style={{
                 maxHeight: isExpanded
@@ -89,7 +98,11 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ bgColor = 'var(--color-1)
                 )}
               </div>
               {!isExpanded && (
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-white" />
+                <div
+                  className={`
+                    pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-white
+                  `}
+                />
               )}
             </div>
           </div>

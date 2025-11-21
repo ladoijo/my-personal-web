@@ -39,7 +39,14 @@ const SectionEducation = () => {
                   lg:grid-cols-[140px_auto_1fr]
                 `}
               >
-                <b className="hidden text-right lg:block">{ed.degree}</b>
+                <b
+                  className={`
+                    hidden text-right
+                    lg:block
+                  `}
+                >
+                  {ed.degree}
+                </b>
                 <VerticalLineConnector type="education" />
                 <div
                   className={`

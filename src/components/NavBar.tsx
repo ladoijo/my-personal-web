@@ -73,8 +73,8 @@ const NavBar = () => {
               width={2600}
               height={3800}
               className={`
-                mx-auto h-40 w-40 rounded-full border-2 border-black bg-[var(--color-1)] object-cover
-                object-[center_25%]
+                mx-auto h-40 w-40 rounded-full border-2 border-black bg-[var(--color-1)]
+                object-cover object-[center_25%]
               `}
               src="/assets/images/me.webp"
               alt="Profile Picture"

@@ -27,7 +27,7 @@ const Portfolio = () => {
   }, [hasProjects]);
 
   const filteredItems = useMemo(() => {
-    let items: IPortfolioProject['items'] = [];
+    const items: IPortfolioProject['items'] = [];
     if (selectedCategory === 'all') {
       for (const value of Object.values(PortfolioProjects)) {
         items.push(...value.items);
@@ -41,7 +41,12 @@ const Portfolio = () => {
   return (
     <Paper id={NavItems[4].id} title="Portfolio" bgColor="#e3e3ff">
       <div className="flex w-full flex-col gap-8">
-        <div className="flex flex-wrap justify-center gap-4 md:justify-start">
+        <div
+          className={`
+            flex flex-wrap justify-center gap-4
+            md:justify-start
+          `}
+        >
           <Button pressed={selectedCategory === 'all'} onClick={() => setSelectedCategory('all')}>
             All ({totalProject})
           </Button>
