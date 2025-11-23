@@ -1,4 +1,5 @@
 import NavBar from '@/components/NavBar';
+import { siteConfig } from '@/constants/siteConfig';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
@@ -14,8 +15,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Hadyan Putra Yasrizal (HDygiDev) - Full Stack Developer',
-  description: 'Hadyan is a full stack developer with a passion for building web applications.',
+  metadataBase: new URL(siteConfig.siteUrl),
+  title: siteConfig.title,
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
+  keywords: siteConfig.keywords,
+  creator: siteConfig.name,
+  authors: [{ name: siteConfig.name }],
+  publisher: siteConfig.name,
+  alternates: { canonical: '/' },
+  openGraph: {
+    title: siteConfig.title,
+    description: siteConfig.description,
+    url: siteConfig.siteUrl,
+    siteName: siteConfig.name,
+    type: 'website',
+    locale: siteConfig.locale,
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: siteConfig.title }]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage]
+  },
   icons: {
     icon: [
       { url: '/favicon.ico' },
@@ -23,6 +46,9 @@ export const metadata: Metadata = {
       { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' }
     ],
     apple: '/apple-touch-icon.png'
+  },
+  other: {
+    'google-site-verification': 'a6iJGnvsQYP9yKQxvWj0l-qfcXYoRJYR3tkV3dinsa0'
   },
   manifest: '/manifest.json'
 };
@@ -32,8 +58,26 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: siteConfig.name,
+    jobTitle: 'Full Stack Developer',
+    url: siteConfig.siteUrl,
+    image: siteConfig.ogImage,
+    description: siteConfig.description,
+    sameAs: ['https://github.com/hadyanyasrizal', 'https://www.linkedin.com/in/hadyanyasrizal']
+  };
+
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </head>
       <body
         className={`
           ${geistSans.variable}

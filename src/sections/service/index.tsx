@@ -79,16 +79,16 @@ const Service = () => {
                     >
                       <div
                         className={`
-                        group flex w-[22rem] flex-col items-start gap-4
-                        overflow-hidden rounded-md border-2 border-solid border-black bg-white p-2
-                      `}
+                          group flex w-[22rem] flex-col items-start gap-4 overflow-hidden rounded-md
+                          border-2 border-solid border-black bg-white p-2
+                        `}
                       >
                         <div
                           style={{ backgroundColor: workflow.color }}
                           className={`
-                          m-2 flex h-16 w-16 items-center justify-center self-center
-                          rounded-full border-2 border-solid border-black p-2
-                        `}
+                            m-2 flex h-16 w-16 items-center justify-center self-center rounded-full
+                            border-2 border-solid border-black p-2
+                          `}
                         >
                           <Icon />
                         </div>

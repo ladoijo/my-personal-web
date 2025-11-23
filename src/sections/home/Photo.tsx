@@ -30,7 +30,7 @@ const Photo = () => {
           height={380}
           width={1509}
           src="/assets/images/hdygidev.webp"
-          alt="company"
+          alt="Portrait of Hadyan Putra Yasrizal"
           className={`
             w-full rounded-md object-cover transition-all duration-300 ease-in-out
             hover:scale-110 hover:rotate-0
