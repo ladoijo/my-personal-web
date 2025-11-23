@@ -2,7 +2,12 @@ import ApiIcon from '@/assets/icons/api.svg';
 import BackendIcon from '@/assets/icons/backend.svg';
 import ConsultantIcon from '@/assets/icons/consultant.svg';
 import DashboardIcon from '@/assets/icons/dashboard.svg';
+import DeployIcon from '@/assets/icons/deploy.svg';
+import DesignIcon from '@/assets/icons/design.svg';
+import DevelopmentIcon from '@/assets/icons/development.svg';
 import MobileIcon from '@/assets/icons/mobile.svg';
+import RequirementsIcon from '@/assets/icons/requirements.svg';
+import TestingIcon from '@/assets/icons/testing.svg';
 import WebIcon from '@/assets/icons/web.svg';
 import { IconComponent } from '@/types/icon';
 
@@ -79,7 +84,7 @@ export const Workflows: IWorkflow[] = [
     name: 'Discovery & Requirements',
     description:
       'I start by understanding your business goals, current challenges, and what success looks like. We clarify the scope, features, timelines, and any existing systems we need to integrate with.',
-    Icon: BackendIcon,
+    Icon: RequirementsIcon,
     color: 'var(--color-1)'
   },
   {
@@ -87,7 +92,7 @@ export const Workflows: IWorkflow[] = [
     name: 'Solution Design & Planning',
     description:
       'I design the system architecture (backend, frontend, database, integrations) and propose a clear plan: tech stack, milestones, and deliverables. ',
-    Icon: WebIcon,
+    Icon: DesignIcon,
     color: 'var(--color-2)'
   },
   {
@@ -95,7 +100,7 @@ export const Workflows: IWorkflow[] = [
     name: 'Development',
     description:
       'I develop the solution in small, reviewable chunks whether it’s a backend service, web app, mobile app, or internal tool using technologies that best fit your needs, with a focus on clean, maintainable, and secure code.',
-    Icon: MobileIcon,
+    Icon: DevelopmentIcon,
     color: 'var(--color-3)'
   },
   {
@@ -103,7 +108,7 @@ export const Workflows: IWorkflow[] = [
     name: 'Testing, Review & Iteration',
     description:
       'I test features (functional tests, edge cases, basic performance checks) and share demos with you. Your feedback is incorporated early so we can refine behavior, UX, and flows before going live.',
-    Icon: ConsultantIcon,
+    Icon: TestingIcon,
     color: 'var(--color-4)'
   },
   {
@@ -111,7 +116,7 @@ export const Workflows: IWorkflow[] = [
     name: 'Deployment & Monitoring Setup',
     description:
       'I prepare production deployment, configure environment variables, and set up basic monitoring/logging so we can track system health after launch.',
-    Icon: ApiIcon,
+    Icon: DeployIcon,
     color: 'var(--color-5)'
   },
   {
@@ -119,7 +124,7 @@ export const Workflows: IWorkflow[] = [
     name: 'Post Launch Support & Improvements',
     description:
       'After go live, I’m available for bug fixes, small enhancements, performance tuning, and new feature development based on real user feedback and usage data.',
-    Icon: DashboardIcon,
+    Icon: ConsultantIcon,
     color: 'var(--color-6)'
   }
 ];
