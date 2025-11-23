@@ -63,7 +63,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ bgColor = 'var(--color-1)
 
         <div className="flex h-full flex-col justify-between gap-2 border-t-2 bg-white p-6">
           <div className="flex flex-col gap-2">
-            <h3 className="text-xl font-semibold text-gray-800">{item.title}</h3>
+            <h1 className="text-xl font-semibold text-gray-800">{item.title}</h1>
             <div
               className={`
                 relative flex flex-col items-start overflow-hidden transition-[max-height]

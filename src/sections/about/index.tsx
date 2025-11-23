@@ -101,7 +101,7 @@ const About = () => {
             >
               <div className="flex h-full w-full flex-row space-x-2">
                 <div className="flex flex-1 flex-col items-center justify-center">
-                  <h3 className="text-8xl font-semibold">{totalYearsExp}</h3>
+                  <h1 className="text-8xl font-semibold">{totalYearsExp}</h1>
                   <p className="text-base text-black">Years</p>
                 </div>
                 <ExperienceIcon
@@ -132,7 +132,7 @@ const About = () => {
             >
               <div className="flex h-full w-full flex-row space-x-2">
                 <div className="flex flex-1 flex-col items-center justify-center">
-                  <h3 className="text-8xl font-semibold">{totalCompanies}</h3>
+                  <h1 className="text-8xl font-semibold">{totalCompanies}</h1>
                   <p className="text-base text-black">Companies</p>
                 </div>
                 <CompanyIcon

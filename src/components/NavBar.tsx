@@ -96,6 +96,7 @@ const NavBar = () => {
           >
             <Link
               href={AccountUrls.whatsapp.url}
+              aria-label={AccountUrls.whatsapp.name}
               className={`
                 group flex flex-1 flex-col items-center p-2 transition-colors duration-300
                 hover:bg-black
@@ -111,6 +112,7 @@ const NavBar = () => {
             </Link>
             <Link
               href={AccountUrls.mail.url}
+              aria-label={AccountUrls.mail.name}
               className={`
                 group flex flex-1 flex-col items-center p-2 transition-colors duration-300
                 hover:bg-black
@@ -126,6 +128,7 @@ const NavBar = () => {
             </Link>
             <Link
               href={AccountUrls.linkedin.url}
+              aria-label={AccountUrls.linkedin.name}
               className={`
                 group flex flex-1 flex-col items-center p-2 transition-colors duration-300
                 hover:bg-black
@@ -141,6 +144,7 @@ const NavBar = () => {
             </Link>
             <Link
               href={AccountUrls.github.url}
+              aria-label={AccountUrls.github.name}
               className={`
                 group flex flex-1 flex-col items-center p-2 transition-colors duration-300
                 hover:bg-black
@@ -160,23 +164,25 @@ const NavBar = () => {
           >
             {NavItems.map(({ id, label, Icon }) => {
               return (
-                <Link
-                  key={id}
-                  href={`#${id}`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavItemClick(id);
-                  }}
-                  className={`
+                <li key={id}>
+                  <Link
+                    aria-label={label}
+                    href={`#${id}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavItemClick(id);
+                    }}
+                    className={`
                     flex flex-row items-center gap-2 space-x-3 px-5 py-3 transition-colors
                     duration-300
                     hover:cursor-pointer hover:rounded-none hover:bg-teal-500 hover:text-white
                     ${activeSection === id ? `text-teal-500` : `text-black`}
                   `}
-                >
-                  <Icon className={`h-6 w-6 transition-colors duration-300`} />
-                  <span>{label}</span>
-                </Link>
+                  >
+                    <Icon className={`h-6 w-6 transition-colors duration-300`} />
+                    <span>{label}</span>
+                  </Link>
+                </li>
               );
             })}
           </ul>

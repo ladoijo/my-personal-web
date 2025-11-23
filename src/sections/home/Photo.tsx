@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import ImageSafe from '@/components/ImageSafe';
 
 const Photo = () => {
   return (
@@ -26,9 +26,11 @@ const Photo = () => {
         <circle cx="60" cy="60" r="50" stroke="#0EA5A4" strokeDasharray="6 8" strokeWidth="2" />
       </svg>
       <div className="relative flex h-full w-full items-center justify-center">
-        <Image
+        <ImageSafe
           height={380}
           width={1509}
+          fetchPriority="high"
+          loading="eager"
           src="/assets/images/hdygidev.webp"
           alt="Portrait of Hadyan Putra Yasrizal"
           className={`
