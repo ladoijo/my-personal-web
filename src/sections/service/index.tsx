@@ -14,7 +14,12 @@ const Service = () => {
   return (
     <Paper id={NavItems[3].id} title="My Services" className="bg-dots">
       <div className="mt-10 flex w-full flex-col items-center justify-center gap-20">
-        <div className="flex w-full flex-col lg:w-6xl">
+        <div
+          className={`
+            flex w-full flex-col
+            lg:w-6xl
+          `}
+        >
           <div className="mb-8 flex w-full flex-col gap-5 text-center">
             <Title
               title="The service I offer is specifically designed to meet your needs."
@@ -34,16 +39,18 @@ const Service = () => {
                   key={service.id}
                   style={service.color ? { backgroundColor: service.color } : undefined}
                   className={`
-                    group relative flex flex-col items-start gap-4 overflow-hidden rounded-2xl border-2
-                    border-solid border-black p-4 text-left shadow-[4px_4px_black] transition-all
-                    duration-300 hover:-translate-y-1
+                    group relative flex flex-col items-start gap-4 overflow-hidden rounded-2xl
+                    border-2 border-solid border-black p-4 text-left shadow-[4px_4px_black]
+                    transition-all duration-300
+                    hover:-translate-y-1
                     lg:flex-row
                   `}
                 >
                   <div
                     className={`
                       flex h-16 w-16 items-center justify-center self-center rounded-full border-2
-                      border-solid border-black bg-white p-2 lg:self-start
+                      border-solid border-black bg-white p-2
+                      lg:self-start
                     `}
                   >
                     <Icon />
@@ -59,7 +66,12 @@ const Service = () => {
             })}
           </div>
         </div>
-        <div className="flex w-full flex-col lg:w-6xl">
+        <div
+          className={`
+            flex w-full flex-col
+            lg:w-6xl
+          `}
+        >
           <div className="mb-8 flex w-full flex-col gap-5 text-center">
             <Title
               title="I follow a workflow that helps me get things done efficiently."
@@ -74,7 +86,11 @@ const Service = () => {
                   return (
                     <CarouselItem
                       key={workflow.id}
-                      className="flex w-fit basis-1/1 flex-row pl-4 sm:basis-1/2 lg:basis-1/3"
+                      className={`
+                        flex w-fit basis-1/1 flex-row pl-4
+                        sm:basis-1/2
+                        lg:basis-1/3
+                      `}
                     >
                       <div
                         style={{ backgroundColor: workflow.color }}
@@ -82,16 +98,17 @@ const Service = () => {
                       >
                         <div
                           className={`
-                          group flex w-[14rem] flex-col items-start gap-4 overflow-hidden rounded-md border-2
-                          border-solid border-black bg-white p-2 lg:w-[20.5rem]
-                        `}
+                            group flex w-[14rem] flex-col items-start gap-4 overflow-hidden
+                            rounded-md border-2 border-solid border-black bg-white p-2
+                            lg:w-[20.5rem]
+                          `}
                         >
                           <div
                             style={{ backgroundColor: workflow.color }}
                             className={`
-                            m-2 flex h-16 w-16 items-center justify-center self-center rounded-full
-                            border-2 border-solid border-black p-2
-                          `}
+                              m-2 flex h-16 w-16 items-center justify-center self-center
+                              rounded-full border-2 border-solid border-black p-2
+                            `}
                           >
                             <Icon />
                           </div>

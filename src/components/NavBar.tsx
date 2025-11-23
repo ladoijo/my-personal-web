@@ -173,11 +173,11 @@ const NavBar = () => {
                       handleNavItemClick(id);
                     }}
                     className={`
-                    flex flex-row items-center gap-2 space-x-3 px-5 py-3 transition-colors
-                    duration-300
-                    hover:cursor-pointer hover:rounded-none hover:bg-teal-500 hover:text-white
-                    ${activeSection === id ? `text-teal-500` : `text-black`}
-                  `}
+                      flex flex-row items-center gap-2 space-x-3 px-5 py-3 transition-colors
+                      duration-300
+                      hover:cursor-pointer hover:rounded-none hover:bg-teal-500 hover:text-white
+                      ${activeSection === id ? `text-teal-500` : `text-black`}
+                    `}
                   >
                     <Icon className={`h-6 w-6 transition-colors duration-300`} />
                     <span>{label}</span>

@@ -15,7 +15,11 @@ const CardEducationSummary = ({
       hover:scale-110
     `}
   >
-    <div className="flex flex-col gap-2 rounded-sm border-2 border-dotted border-black bg-white px-4 py-2.5">
+    <div
+      className={`
+        flex flex-col gap-2 rounded-sm border-2 border-dotted border-black bg-white px-4 py-2.5
+      `}
+    >
       <div className="flex flex-col gap-2">
         <b className="font-bold">{education.institution}</b>
         <div className="flex h-0.5 w-full justify-self-center bg-black" />
