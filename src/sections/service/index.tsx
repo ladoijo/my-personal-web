@@ -15,7 +15,12 @@ const Service = () => {
               size="3xl"
             />
           </div>
-          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+          <div
+            className={`
+              grid grid-cols-1 gap-4
+              lg:grid-cols-2
+            `}
+          >
             {Services.map((service) => {
               const Icon = service.Icon;
               return (
@@ -23,10 +28,11 @@ const Service = () => {
                   key={service.id}
                   style={service.color ? { backgroundColor: service.color } : undefined}
                   className={`
-                  group relative flex flex-row items-start gap-4 overflow-hidden rounded-2xl border-2
-                  border-solid border-black p-4 text-left shadow-[4px_4px_black] transition-all
-                  duration-300 hover:-translate-y-1
-                `}
+                    group relative flex flex-row items-start gap-4 overflow-hidden rounded-2xl
+                    border-2 border-solid border-black p-4 text-left shadow-[4px_4px_black]
+                    transition-all duration-300
+                    hover:-translate-y-1
+                  `}
                 >
                   <div
                     className={`
@@ -64,13 +70,18 @@ const Service = () => {
                     style={{ backgroundColor: workflow.color }}
                     className="flex rounded-xl border-2 border-solid border-black p-2 text-left"
                   >
-                    <div className="group relative flex w-lg flex-shrink-0 flex-row items-start gap-4 overflow-hidden rounded-md border-2 border-solid border-black bg-white p-2">
+                    <div
+                      className={`
+                        group relative flex w-lg flex-shrink-0 flex-row items-start gap-4
+                        overflow-hidden rounded-md border-2 border-solid border-black bg-white p-2
+                      `}
+                    >
                       <div
                         style={{ backgroundColor: workflow.color }}
                         className={`
-                        flex h-16 w-16 items-center justify-center rounded-full border-2 border-solid border-black
-                        p-2
-                      `}
+                          flex h-16 w-16 items-center justify-center rounded-full border-2
+                          border-solid border-black p-2
+                        `}
                       >
                         <Icon />
                       </div>

@@ -16,7 +16,11 @@ function CarouselButton({ onClick, ariaLabel, children, position }: CarouselButt
     <button
       type="button"
       onClick={onClick}
-      className={`absolute top-1/2 -translate-y-1/2 rounded-full border-2 border-black bg-white p-3 text-sm hover:bg-black hover:text-white ${positionClasses}`}
+      className={`
+        absolute top-1/2 -translate-y-1/2 rounded-full border-2 border-black bg-white p-3 text-sm
+        hover:bg-black hover:text-white
+        ${positionClasses}
+      `}
       aria-label={ariaLabel}
     >
       {children}
