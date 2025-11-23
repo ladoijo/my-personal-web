@@ -47,7 +47,10 @@ const Portfolio = () => {
     >
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <svg
-          className="absolute -left-8 top-8 h-28 w-36 rotate-6 text-amber-200 opacity-70 sm:left-2"
+          className={`
+            absolute top-8 -left-8 h-28 w-36 rotate-6 text-amber-200 opacity-70
+            sm:left-2
+          `}
           viewBox="0 0 220 140"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -62,12 +65,7 @@ const Portfolio = () => {
             stroke="black"
             strokeWidth="4"
           />
-          <path
-            d="M40 52h64M40 70h44"
-            stroke="black"
-            strokeWidth="6"
-            strokeLinecap="round"
-          />
+          <path d="M40 52h64M40 70h44" stroke="black" strokeWidth="6" strokeLinecap="round" />
           <path
             d="M28 18 40 10l10 14 12-10 10 14"
             stroke="#22d3ee"
@@ -77,7 +75,10 @@ const Portfolio = () => {
           />
         </svg>
         <svg
-          className="absolute right-2 top-2 h-28 w-28 -rotate-6 text-pink-200 opacity-70 sm:right-12"
+          className={`
+            absolute top-2 right-2 h-28 w-28 -rotate-6 text-pink-200 opacity-70
+            sm:right-12
+          `}
           viewBox="0 0 150 150"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -88,22 +89,14 @@ const Portfolio = () => {
             stroke="black"
             strokeWidth="5"
           />
-          <path
-            d="M56 60 88 92"
-            stroke="black"
-            strokeWidth="6"
-            strokeLinecap="round"
-          />
+          <path d="M56 60 88 92" stroke="black" strokeWidth="6" strokeLinecap="round" />
           <circle cx="62" cy="54" r="6" fill="#f97316" stroke="black" strokeWidth="3" />
-          <path
-            d="M32 118h36l-8-14"
-            stroke="black"
-            strokeWidth="6"
-            strokeLinecap="round"
-          />
+          <path d="M32 118h36l-8-14" stroke="black" strokeWidth="6" strokeLinecap="round" />
         </svg>
         <svg
-          className="absolute bottom-4 left-1/2 h-28 w-44 -translate-x-1/2 rotate-2 text-sky-200 opacity-70"
+          className={`
+            absolute bottom-4 left-1/2 h-28 w-44 -translate-x-1/2 rotate-2 text-sky-200 opacity-70
+          `}
           viewBox="0 0 240 140"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

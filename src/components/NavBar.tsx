@@ -51,9 +51,7 @@ const NavBar = () => {
       {/* Overlay */}
       {isNavOpen && (
         <div
-          className={`
-            fixed inset-0 z-40 bg-black opacity-50 transition-opacity duration-500
-          `}
+          className={`fixed inset-0 z-40 bg-black opacity-50 transition-opacity duration-500`}
           onClick={toggleNav}
         />
       )}
@@ -72,9 +70,8 @@ const NavBar = () => {
             onClick={toggleNav}
             aria-label="Close Menu"
             className={`
-          fixed top-1 right-1 z-40 flex h-10 w-10 items-center justify-center
-          rounded-full
-        `}
+              fixed top-1 right-1 z-40 flex h-10 w-10 items-center justify-center rounded-full
+            `}
           >
             <CloseIcon name="Close" className="h-10 w-10" />
           </button>
@@ -214,7 +211,8 @@ const NavBar = () => {
         aria-label="Burger Menu"
         className={`
           fixed top-6 left-6 z-30 flex h-10 w-10 items-center justify-center rounded-full bg-white
-          shadow-lg hover:bg-gray-200
+          shadow-lg
+          hover:bg-gray-200
         `}
         style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.3)' }}
       >

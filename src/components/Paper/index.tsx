@@ -32,9 +32,8 @@ const Paper = memo(({ children, title, bgColor = 'white', className, ...props }:
       ref={ref}
       className={clsx(
         `
-          min-w-xs transform space-y-5
-          p-6
-          transition duration-1000 ease-in md:p-8
+          min-w-xs transform space-y-5 p-6 transition duration-1000 ease-in
+          md:p-8
         `,
         {
           'translate-y-0 opacity-100': isVisible,

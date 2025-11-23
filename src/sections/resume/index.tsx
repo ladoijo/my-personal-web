@@ -17,7 +17,10 @@ const Resume = () => {
     >
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <svg
-          className="absolute -left-8 top-4 h-28 w-32 rotate-6 text-amber-200 opacity-70 sm:left-2"
+          className={`
+            absolute top-4 -left-8 h-28 w-32 rotate-6 text-amber-200 opacity-70
+            sm:left-2
+          `}
           viewBox="0 0 210 140"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +45,10 @@ const Resume = () => {
           />
         </svg>
         <svg
-          className="absolute right-0 top-6 h-24 w-24 -rotate-6 text-pink-200 opacity-70 sm:right-10"
+          className={`
+            absolute top-6 right-0 h-24 w-24 -rotate-6 text-pink-200 opacity-70
+            sm:right-10
+          `}
           viewBox="0 0 150 150"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +69,10 @@ const Resume = () => {
           />
         </svg>
         <svg
-          className="absolute bottom-10 left-2 h-24 w-28 rotate-3 text-sky-200 opacity-70 sm:left-8"
+          className={`
+            absolute bottom-10 left-2 h-24 w-28 rotate-3 text-sky-200 opacity-70
+            sm:left-8
+          `}
           viewBox="0 0 180 140"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +88,9 @@ const Resume = () => {
           <circle cx="90" cy="48" r="6" fill="#22d3ee" stroke="black" strokeWidth="3" />
         </svg>
         <svg
-          className="absolute bottom-4 left-1/2 h-24 w-44 -translate-x-1/2 rotate-2 text-lime-200 opacity-70"
+          className={`
+            absolute bottom-4 left-1/2 h-24 w-44 -translate-x-1/2 rotate-2 text-lime-200 opacity-70
+          `}
           viewBox="0 0 240 140"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -138,7 +149,7 @@ const Resume = () => {
           <circle cx="110" cy="40" r="6" fill="#a855f7" stroke="black" strokeWidth="3" />
         </svg>
         <svg
-          className="absolute left-1/2 top-8 h-24 w-36 -translate-x-1/2 text-rose-200 opacity-70"
+          className="absolute top-8 left-1/2 h-24 w-36 -translate-x-1/2 text-rose-200 opacity-70"
           viewBox="0 0 210 140"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -169,12 +180,7 @@ const Resume = () => {
             strokeWidth="6"
             strokeLinecap="round"
           />
-          <path
-            d="M150 42 162 54l-20 24-16-14z"
-            fill="#22d3ee"
-            stroke="black"
-            strokeWidth="4"
-          />
+          <path d="M150 42 162 54l-20 24-16-14z" fill="#22d3ee" stroke="black" strokeWidth="4" />
         </svg>
       </div>
       <div className="relative z-10 flex flex-col gap-10">

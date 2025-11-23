@@ -59,10 +59,13 @@ const Contact = memo(() => {
   };
 
   return (
-    <Paper id={NavItems[5].id} title="Contact" className="relative overflow-hidden bg-dots">
+    <Paper id={NavItems[5].id} title="Contact" className="bg-dots relative overflow-hidden">
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <svg
-          className="absolute -left-6 top-8 h-28 w-32 rotate-6 text-sky-200 opacity-60 sm:left-4"
+          className={`
+            absolute top-8 -left-6 h-28 w-32 rotate-6 text-sky-200 opacity-60
+            sm:left-4
+          `}
           viewBox="0 0 200 140"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +96,10 @@ const Contact = memo(() => {
           />
         </svg>
         <svg
-          className="absolute right-4 top-4 h-28 w-28 -rotate-6 text-amber-200 opacity-60 sm:right-12"
+          className={`
+            absolute top-4 right-4 h-28 w-28 -rotate-6 text-amber-200 opacity-60
+            sm:right-12
+          `}
           viewBox="0 0 150 150"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -107,7 +113,9 @@ const Contact = memo(() => {
           <circle cx="74" cy="58" r="18" fill="white" stroke="black" strokeWidth="5" />
         </svg>
         <svg
-          className="absolute bottom-6 left-1/2 h-24 w-40 -translate-x-1/2 rotate-3 text-pink-200 opacity-60"
+          className={`
+            absolute bottom-6 left-1/2 h-24 w-40 -translate-x-1/2 rotate-3 text-pink-200 opacity-60
+          `}
           viewBox="0 0 240 140"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -118,12 +126,7 @@ const Contact = memo(() => {
             stroke="black"
             strokeWidth="4"
           />
-          <path
-            d="M82 58h58M82 74h38"
-            stroke="black"
-            strokeWidth="6"
-            strokeLinecap="round"
-          />
+          <path d="M82 58h58M82 74h38" stroke="black" strokeWidth="6" strokeLinecap="round" />
           <path
             d="M160 66c0-8 6-14 14-14h18c8 0 14 6 14 14v10c0 8-6 14-14 14h-8l-6 10-2-10h-8c-8 0-14-6-14-14z"
             fill="#c4f1f9"

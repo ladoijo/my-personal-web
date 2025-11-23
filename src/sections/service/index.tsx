@@ -12,10 +12,13 @@ import { NavItems } from '@/constants/NavItemsConst';
 
 const Service = () => {
   return (
-    <Paper id={NavItems[3].id} title="My Services" className="relative overflow-hidden bg-dots">
+    <Paper id={NavItems[3].id} title="My Services" className="bg-dots relative overflow-hidden">
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <svg
-          className="absolute -left-8 top-10 h-28 w-28 rotate-6 text-amber-300 opacity-60 sm:left-2"
+          className={`
+            absolute top-10 -left-8 h-28 w-28 rotate-6 text-amber-300 opacity-60
+            sm:left-2
+          `}
           viewBox="0 0 140 140"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +32,10 @@ const Service = () => {
           <circle cx="70" cy="70" r="12" fill="white" stroke="black" strokeWidth="4" />
         </svg>
         <svg
-          className="absolute right-6 top-4 h-24 w-32 -rotate-6 text-sky-300 opacity-60 sm:right-14"
+          className={`
+            absolute top-4 right-6 h-24 w-32 -rotate-6 text-sky-300 opacity-60
+            sm:right-14
+          `}
           viewBox="0 0 200 140"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +71,9 @@ const Service = () => {
           />
         </svg>
         <svg
-          className="absolute bottom-6 left-1/2 h-24 w-40 -translate-x-1/2 rotate-3 text-pink-300 opacity-60"
+          className={`
+            absolute bottom-6 left-1/2 h-24 w-40 -translate-x-1/2 rotate-3 text-pink-300 opacity-60
+          `}
           viewBox="0 0 220 140"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -88,7 +96,10 @@ const Service = () => {
           <path d="M118 90h38l-10-12" stroke="black" strokeWidth="6" strokeLinecap="round" />
         </svg>
         <svg
-          className="absolute bottom-10 left-6 h-24 w-28 rotate-6 text-lime-200 opacity-60 sm:left-14"
+          className={`
+            absolute bottom-10 left-6 h-24 w-28 rotate-6 text-lime-200 opacity-60
+            sm:left-14
+          `}
           viewBox="0 0 180 140"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +134,10 @@ const Service = () => {
           <circle cx="98" cy="38" r="6" fill="#f97316" stroke="black" strokeWidth="3" />
         </svg>
         <svg
-          className="absolute right-12 bottom-4 h-24 w-28 -rotate-3 text-violet-200 opacity-60 sm:right-20"
+          className={`
+            absolute right-12 bottom-4 h-24 w-28 -rotate-3 text-violet-200 opacity-60
+            sm:right-20
+          `}
           viewBox="0 0 180 140"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

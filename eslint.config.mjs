@@ -67,7 +67,7 @@ const eslintConfig = [
       'better-tailwindcss/no-unregistered-classes': [
         'error',
         {
-          ignore: ['bg-dots', 'animate-marquee']
+          ignore: ['bg-dots', 'animate-marquee', 'bg-paper']
         }
       ],
       'validate-filename/naming-rules': [
