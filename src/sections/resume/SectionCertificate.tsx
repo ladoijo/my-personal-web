@@ -30,7 +30,7 @@ const SectionCertificates = () => {
             <div
               className={`
                 flex h-16 w-16 items-center justify-center rounded-full border-2 border-solid
-                bg-white p-2
+                border-black bg-white p-2
               `}
             >
               <MedalIcon />

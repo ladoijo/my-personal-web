@@ -27,6 +27,11 @@ const tvTitle = tv({
         text-2xl
         md:text-3xl
         lg:text-4xl
+      `,
+      '3xl': `
+        text-3xl
+        md:text-4xl
+        lg:text-5xl
       `
     }
   },
@@ -37,7 +42,7 @@ const tvTitle = tv({
 
 interface TitleProps {
   title: string;
-  size: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+  size: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl';
   hasBorder?: boolean;
 }
 

@@ -16,6 +16,7 @@ const eslintConfig = [
   ...compat.extends('next/core-web-vitals', 'next/typescript', 'plugin:prettier/recommended'),
   {
     files: ['**/*.{ts,tsx,cts,mts}'],
+    ignores: ['src/app/robots.ts', 'src/app/sitemap.ts'],
     languageOptions: {
       parser: eslintParserTypeScript,
       parserOptions: {

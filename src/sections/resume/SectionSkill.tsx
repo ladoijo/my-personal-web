@@ -116,7 +116,7 @@ const SectionSkill = () => {
         </div>
         <div
           className={`
-            flex flex-1 overflow-scroll
+            flex flex-1 self-center overflow-scroll
             lg:flex-4/6
           `}
         >

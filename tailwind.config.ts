@@ -11,8 +11,8 @@ export default {
     extend: {
       colors: {
         // Optional: design tokens using CSS variables
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))'
+        background: 'var(--background)',
+        foreground: 'var(--foreground)'
       }
     }
   },

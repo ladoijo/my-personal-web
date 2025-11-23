@@ -1,5 +1,5 @@
-import CompanyIcon from '@/assets/icons/company.svg';
-import ExperienceIcon from '@/assets/icons/experience.svg';
+import CompanyIcon from '@/assets/icons/badge.svg';
+import ExperienceIcon from '@/assets/icons/calendar.svg';
 import Chip from '@/components/Chip';
 import Paper from '@/components/Paper';
 import { WorkExperiences } from '@/constants/HistoriesConst';
@@ -101,7 +101,7 @@ const About = () => {
             >
               <div className="flex h-full w-full flex-row space-x-2">
                 <div className="flex flex-1 flex-col items-center justify-center">
-                  <h3 className="text-8xl font-semibold">{totalYearsExp}</h3>
+                  <h1 className="text-8xl font-semibold">{totalYearsExp}</h1>
                   <p className="text-base text-black">Years</p>
                 </div>
                 <ExperienceIcon
@@ -132,7 +132,7 @@ const About = () => {
             >
               <div className="flex h-full w-full flex-row space-x-2">
                 <div className="flex flex-1 flex-col items-center justify-center">
-                  <h3 className="text-8xl font-semibold">{totalCompanies}</h3>
+                  <h1 className="text-8xl font-semibold">{totalCompanies}</h1>
                   <p className="text-base text-black">Companies</p>
                 </div>
                 <CompanyIcon

@@ -9,13 +9,17 @@ const CardEducationSummary = ({
 }) => (
   <div
     className={`
-      flex flex-col gap-2 self-start rounded-md border-2 border-dotted p-3 text-left
+      flex flex-col gap-2 self-start rounded-md border-2 border-dotted border-black p-3 text-left
       ${isLastItem ? `mb-0` : `mb-4`}
       transition-all duration-300
       hover:scale-110
     `}
   >
-    <div className="flex flex-col gap-2 rounded-sm border-2 border-dotted bg-white px-4 py-2.5">
+    <div
+      className={`
+        flex flex-col gap-2 rounded-sm border-2 border-dotted border-black bg-white px-4 py-2.5
+      `}
+    >
       <div className="flex flex-col gap-2">
         <b className="font-bold">{education.institution}</b>
         <div className="flex h-0.5 w-full justify-self-center bg-black" />

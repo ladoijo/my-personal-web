@@ -20,7 +20,7 @@ const ContactLink = memo(
     title,
     description,
     iconBgColor = '#000000',
-    iconTextColor = 'var(--color-6)'
+    iconTextColor = '#ffffff'
   }: ContactLinkProps) => (
     <Link
       href={href}

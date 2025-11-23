@@ -37,7 +37,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ bgColor = 'var(--color-1)
     <div
       className={`
         group mb-8 cursor-pointer break-inside-avoid-column overflow-hidden rounded-xl border-2
-        border-black p-3 transition-all duration-300
+        border-black p-2 transition-all duration-300
         hover:-translate-y-1
       `}
       style={{ backgroundColor: bgColor }}
@@ -45,7 +45,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ bgColor = 'var(--color-1)
     >
       <div
         className={`
-          flex h-full w-full flex-col overflow-hidden rounded-lg border-2 border-black bg-black
+          flex h-full w-full flex-col overflow-hidden rounded-md border-2 border-black bg-black
         `}
       >
         <div className="relative flex min-h-48 w-full overflow-hidden">
@@ -63,7 +63,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ bgColor = 'var(--color-1)
 
         <div className="flex h-full flex-col justify-between gap-2 border-t-2 bg-white p-6">
           <div className="flex flex-col gap-2">
-            <h3 className="text-xl font-semibold text-gray-800">{item.title}</h3>
+            <h1 className="text-xl font-semibold text-gray-800">{item.title}</h1>
             <div
               className={`
                 relative flex flex-col items-start overflow-hidden transition-[max-height]
@@ -108,7 +108,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ bgColor = 'var(--color-1)
           </div>
           <div className="mt-2 flex flex-row flex-wrap gap-2">
             {item.stacks.map((stack) => (
-              <Chip key={stack} text={stack} textColor="var(--color-6)" />
+              <Chip key={stack} text={stack} textColor="#ffffff" />
             ))}
           </div>
         </div>
