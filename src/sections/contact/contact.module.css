@@ -6,8 +6,6 @@
   width: 100%;
   flex-direction: row;
   align-items: center;
-  border-left: 1px solid #000;
-  border-right: 1px solid #000;
   overflow: hidden;
   border-radius: 0.375rem;
   border: 1px solid #000;
