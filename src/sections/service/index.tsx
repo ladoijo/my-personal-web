@@ -6,7 +6,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious
-} from '@/components/ui/carousel';
+} from '@/components/ui/Carousel';
 import { Services, Workflows } from '@/constants/MyServiceConst';
 import { NavItems } from '@/constants/NavItemsConst';
 
