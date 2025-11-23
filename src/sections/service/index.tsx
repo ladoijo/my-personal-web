@@ -104,8 +104,8 @@ const Service = () => {
                 );
               })}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious variant="default" />
+            <CarouselNext variant="default" />
           </Carousel>
           {/* </div> */}
         </div>
