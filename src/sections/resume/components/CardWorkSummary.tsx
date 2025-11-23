@@ -11,7 +11,7 @@ const CardWorkSummary = ({
   <div
     style={workExperience.color ? { backgroundColor: workExperience.color } : undefined}
     className={`
-      group z-12 flex flex-col gap-2 self-start rounded-lg border-2 border-solid px-3 pt-1 text-left
+      group z-12 flex flex-col gap-2 self-start rounded-lg border-2 border-black px-3 pt-1 text-left
       ${isLastItem ? `mb-0` : `mb-4`}
       transition-all duration-300
       hover:scale-110 hover:pb-2.5

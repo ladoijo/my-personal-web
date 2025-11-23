@@ -7,7 +7,7 @@ import Service from '@/sections/service';
 
 export default function Page() {
   return (
-    <div className="flex w-fit flex-col divide-y-2 divide-black">
+    <div className="mx-auto flex w-full flex-col divide-y-2 divide-black">
       <Home />
       <About />
       <Resume />

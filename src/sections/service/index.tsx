@@ -14,7 +14,7 @@ const Service = () => {
   return (
     <Paper id={NavItems[3].id} title="My Services" className="bg-dots">
       <div className="mt-10 flex w-full flex-col items-center justify-center gap-20">
-        <div className="flex w-6xl flex-col">
+        <div className="flex w-full flex-col 2xl:w-6xl">
           <div className="mb-8 flex w-full flex-col gap-5 text-center">
             <Title
               title="The service I offer is specifically designed to meet your needs."
@@ -34,16 +34,16 @@ const Service = () => {
                   key={service.id}
                   style={service.color ? { backgroundColor: service.color } : undefined}
                   className={`
-                    group relative flex flex-row items-start gap-4 overflow-hidden rounded-2xl
-                    border-2 border-solid border-black p-4 text-left shadow-[4px_4px_black]
-                    transition-all duration-300
-                    hover:-translate-y-1
+                    group relative flex flex-col items-start gap-4 overflow-hidden rounded-2xl border-2
+                    border-solid border-black p-4 text-left shadow-[4px_4px_black] transition-all
+                    duration-300 hover:-translate-y-1
+                    lg:flex-row
                   `}
                 >
                   <div
                     className={`
-                      flex h-16 w-16 items-center justify-center rounded-full border-2 border-solid
-                      bg-white p-2
+                      flex h-16 w-16 items-center justify-center self-center rounded-full border-2
+                      border-solid bg-white p-2 lg:self-start
                     `}
                   >
                     <Icon />
@@ -59,7 +59,7 @@ const Service = () => {
             })}
           </div>
         </div>
-        <div className="flex w-6xl flex-col">
+        <div className="flex w-full flex-col 2xl:w-6xl">
           <div className="mb-8 flex w-full flex-col gap-5 text-center">
             <Title
               title="I follow a workflow that helps me get things done efficiently."
@@ -72,7 +72,10 @@ const Service = () => {
               {Workflows.map((workflow) => {
                 const Icon = workflow.Icon;
                 return (
-                  <CarouselItem key={workflow.id} className="flex w-fit basis-1/3 flex-row pl-4">
+                  <CarouselItem
+                    key={workflow.id}
+                    className="flex w-fit basis-3/3 flex-row pl-4 md:basis-1/3"
+                  >
                     <div
                       style={{ backgroundColor: workflow.color }}
                       className="flex rounded-xl border-2 border-solid border-black p-2 text-left"
