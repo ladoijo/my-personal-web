@@ -26,9 +26,79 @@ const About = () => {
   );
 
   return (
-    <Paper id={NavItems[1].id} title="About Me" className="bg-dots">
+    <Paper id={NavItems[1].id} title="About Me" className="relative overflow-hidden bg-dots">
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        <svg
+          className="absolute -left-6 -top-2 h-32 w-32 rotate-6 text-orange-200 opacity-70 sm:left-4 sm:top-2"
+          viewBox="0 0 140 140"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M46 18c-18 24-18 80 0 104M94 18c18 24 18 80 0 104"
+            stroke="black"
+            strokeWidth="8"
+            strokeLinecap="round"
+          />
+          <path
+            d="M46 18c-18 24-18 80 0 104M94 18c18 24 18 80 0 104"
+            stroke="currentColor"
+            strokeWidth="5"
+            strokeLinecap="round"
+          />
+        </svg>
+        <svg
+          className="absolute bottom-8 left-1/2 h-28 w-40 -translate-x-1/2 text-cyan-200 opacity-70"
+          viewBox="0 0 180 120"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M14 70c24-30 60-30 84 0s60 30 84 0"
+            stroke="black"
+            strokeWidth="8"
+            strokeLinecap="round"
+            strokeDasharray="10 10"
+          />
+          <path
+            d="M14 70c24-30 60-30 84 0s60 30 84 0"
+            stroke="currentColor"
+            strokeWidth="5"
+            strokeLinecap="round"
+            strokeDasharray="10 10"
+          />
+          <circle cx="52" cy="34" r="8" fill="currentColor" stroke="black" strokeWidth="4" />
+          <circle cx="124" cy="34" r="8" fill="currentColor" stroke="black" strokeWidth="4" />
+        </svg>
+        <svg
+          className="absolute -right-4 top-6 h-28 w-28 -rotate-12 text-fuchsia-200 opacity-70 sm:right-4"
+          viewBox="0 0 120 120"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M60 8 72 40l32 12-32 12-12 32-12-32-32-12 32-12z"
+            fill="currentColor"
+            stroke="black"
+            strokeWidth="4"
+          />
+          <path
+            d="M60 22v20m0 36v20m-20-36h20m20 0H60"
+            stroke="black"
+            strokeWidth="7"
+            strokeLinecap="round"
+          />
+          <path
+            d="M60 22v20m0 36v20m-20-36h20m20 0H60"
+            stroke="white"
+            strokeWidth="4"
+            strokeLinecap="round"
+          />
+        </svg>
+      </div>
       <div
         className={`
+          relative z-10
           flex flex-col space-y-5
           lg:flex-row lg:space-y-0 lg:space-x-5
         `}
