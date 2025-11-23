@@ -43,7 +43,7 @@ const Service = () => {
                   <div
                     className={`
                       flex h-16 w-16 items-center justify-center self-center rounded-full border-2
-                      border-solid bg-white p-2 lg:self-start
+                      border-solid border-black bg-white p-2 lg:self-start
                     `}
                   >
                     <Icon />
