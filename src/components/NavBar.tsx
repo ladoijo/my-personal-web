@@ -1,5 +1,7 @@
 'use client';
 
+import BurgerIcon from '@/assets/icons/burger.svg';
+import CloseIcon from '@/assets/icons/close.svg';
 import { NavItem, NavItems } from '@/constants/NavItemsConst';
 import { AccountUrls, CVUrl } from '@/constants/UrlConst';
 import Image from 'next/image';
@@ -49,11 +51,8 @@ const NavBar = () => {
       {/* Overlay */}
       {isNavOpen && (
         <div
-          className={`
-            fixed inset-0 z-40 bg-black opacity-50 transition-opacity duration-500
-            lg:hidden
-          `}
-          onTouchStart={toggleNav}
+          className={`fixed inset-0 z-40 bg-black opacity-50 transition-opacity duration-500`}
+          onClick={toggleNav}
         />
       )}
 
@@ -63,11 +62,19 @@ const NavBar = () => {
           fixed top-1/2 left-0 z-40 h-full w-full -translate-y-1/2 transform transition-transform
           duration-300 ease-in-out
           sm:w-60
-          lg:translate-x-0
           ${isNavOpen ? 'translate-x-0' : `-translate-x-full`}
         `}
       >
-        <nav className={`flex h-full flex-col border-r-2 border-black bg-white`}>
+        <nav className={`bg-paper flex h-full flex-col border-r-2 border-black`}>
+          <button
+            onClick={toggleNav}
+            aria-label="Close Menu"
+            className={`
+              fixed top-1 right-1 z-40 flex h-10 w-10 items-center justify-center rounded-full
+            `}
+          >
+            <CloseIcon name="Close" className="h-10 w-10" />
+          </button>
           <div className="relative px-5 pt-5 pb-3">
             <Image
               width={2600}
@@ -201,40 +208,15 @@ const NavBar = () => {
       {/* Burger Button */}
       <button
         onClick={toggleNav}
+        aria-label="Burger Menu"
         className={`
-          fixed top-6 right-6 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-black
-          shadow-lg transition-all duration-250 ease-in-out
-          hover:bg-gray-800
-          lg:hidden
+          fixed top-6 left-6 z-30 flex h-10 w-10 items-center justify-center rounded-full bg-white
+          shadow-lg
+          hover:bg-gray-200
         `}
         style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.3)' }}
       >
-        {/* Hamburger/Cross Icon */}
-        <div className="relative h-[15px] w-5">
-          {/* Top bar */}
-          <span
-            className={`
-              absolute top-0 left-0 h-0.5 w-full origin-center bg-white transition-all duration-300
-              ${isNavOpen ? 'translate-y-2 rotate-45' : 'translate-y-0 rotate-0'}
-            `}
-          />
-          {/* Middle bar */}
-          <span
-            className={`
-              absolute top-1/2 left-0 h-0.5 w-full -translate-y-1/2 bg-white transition-all
-              duration-300
-              ${isNavOpen ? 'scale-0 opacity-0' : 'scale-100 opacity-100'}
-            `}
-          />
-          {/* Bottom bar */}
-          <span
-            className={`
-              absolute bottom-0 left-0 h-0.5 w-full origin-center bg-white transition-all
-              duration-300
-              ${isNavOpen ? '-translate-y-2 -rotate-45' : 'translate-y-0 rotate-0'}
-            `}
-          />
-        </div>
+        <BurgerIcon name="Burger" className="h-7 w-7" />
       </button>
     </>
   );

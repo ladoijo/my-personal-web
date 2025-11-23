@@ -59,7 +59,82 @@ const Contact = memo(() => {
   };
 
   return (
-    <Paper id={NavItems[5].id} title="Contact" className="bg-dots">
+    <Paper id={NavItems[5].id} title="Contact" className="bg-dots relative overflow-hidden">
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        <svg
+          className={`
+            absolute top-8 -left-6 h-28 w-32 rotate-6 text-sky-200 opacity-60
+            sm:left-4
+          `}
+          viewBox="0 0 200 140"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            x="18"
+            y="22"
+            width="164"
+            height="96"
+            rx="12"
+            fill="currentColor"
+            stroke="black"
+            strokeWidth="4"
+          />
+          <path
+            d="m24 34 76 52 76-52"
+            stroke="black"
+            strokeWidth="6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M48 92h48l10 14 10-14h48"
+            stroke="white"
+            strokeWidth="6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+        <svg
+          className={`
+            absolute top-4 right-4 h-28 w-28 -rotate-6 text-amber-200 opacity-60
+            sm:right-12
+          `}
+          viewBox="0 0 150 150"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M74 16c22 0 40 18 40 40 0 30-32 64-40 68-8-4-40-38-40-68 0-22 18-40 40-40Z"
+            fill="currentColor"
+            stroke="black"
+            strokeWidth="5"
+          />
+          <circle cx="74" cy="58" r="18" fill="white" stroke="black" strokeWidth="5" />
+        </svg>
+        <svg
+          className={`
+            absolute bottom-6 left-1/2 h-24 w-40 -translate-x-1/2 rotate-3 text-pink-200 opacity-60
+          `}
+          viewBox="0 0 240 140"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M32 46c0-10 8-18 18-18h80c10 0 18 8 18 18v18c0 10-8 18-18 18H86l-18 16-4-16H50c-10 0-18-8-18-18z"
+            fill="currentColor"
+            stroke="black"
+            strokeWidth="4"
+          />
+          <path d="M82 58h58M82 74h38" stroke="black" strokeWidth="6" strokeLinecap="round" />
+          <path
+            d="M160 66c0-8 6-14 14-14h18c8 0 14 6 14 14v10c0 8-6 14-14 14h-8l-6 10-2-10h-8c-8 0-14-6-14-14z"
+            fill="#c4f1f9"
+            stroke="black"
+            strokeWidth="4"
+          />
+        </svg>
+      </div>
       <div
         className={`
           flex flex-col gap-6
