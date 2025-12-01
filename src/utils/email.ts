@@ -1,4 +1,5 @@
 import emailjs from '@emailjs/browser';
+import { EMAILJS_PUBLIC_KEY, EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID } from './env';
 
 export interface EmailFormData {
   name: string;
@@ -20,9 +21,9 @@ class EmailService {
   private readonly publicKey: string;
 
   constructor() {
-    this.serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '';
-    this.templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '';
-    this.publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '';
+    this.serviceId = EMAILJS_SERVICE_ID;
+    this.templateId = EMAILJS_TEMPLATE_ID;
+    this.publicKey = EMAILJS_PUBLIC_KEY;
 
     if (!this.serviceId || !this.templateId || !this.publicKey) {
       console.error(ERR_CONFIG_MESSAGE);

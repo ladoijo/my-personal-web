@@ -1,4 +1,4 @@
-import { CertificateUrls } from './UrlConst';
+import { CERTIFICATE_ENGLISH_URL, CERTIFICATE_QSD_URL, CERTIFICATE_REACT_URL } from '@/utils/env';
 
 export interface IWorkExperience {
   id: number;
@@ -193,7 +193,7 @@ export const Certificates: ICertificate[] = [
     name: 'Quality Software Developer Foundation Certificate In Maintainability',
     institution: 'PeopleCert',
     publishedDate: 'May 2017',
-    url: CertificateUrls.qsd,
+    url: CERTIFICATE_QSD_URL,
     color: 'var(--color-3)'
   },
   {
@@ -201,7 +201,7 @@ export const Certificates: ICertificate[] = [
     name: 'EF Set Certificate: B2 Upper Intermediate',
     institution: 'English First (EF)',
     publishedDate: 'Jun 2025',
-    url: CertificateUrls.english,
+    url: CERTIFICATE_ENGLISH_URL,
     color: '#FDE4F9'
   },
   {
@@ -209,7 +209,7 @@ export const Certificates: ICertificate[] = [
     name: 'Frontend Developer (React)',
     institution: 'HackerRank',
     publishedDate: 'Jul 2025',
-    url: CertificateUrls.react,
+    url: CERTIFICATE_REACT_URL,
     color: 'var(--color-2)'
   }
 ];
