@@ -6,6 +6,18 @@ import PhoneIcon from '@/assets/icons/phone.svg';
 import UpworkIcon from '@/assets/icons/upwork.svg';
 import WhatsAppIcon from '@/assets/icons/whatsapp.svg';
 import { IconComponent } from '@/types/icon';
+import {
+  ACCOUNT_CONTRA_URL,
+  ACCOUNT_GITHUB_URL,
+  ACCOUNT_LINKEDIN_URL,
+  ACCOUNT_MAIL,
+  ACCOUNT_PHONE,
+  ACCOUNT_UPWORK_URL,
+  ACCOUNT_WHATSAPP_URL,
+  CERTIFICATE_ENGLISH_URL,
+  CERTIFICATE_QSD_URL,
+  CERTIFICATE_REACT_URL
+} from '@/utils/env';
 
 interface IAccountUrls {
   [key: string]: {
@@ -21,58 +33,55 @@ export const AccountUrls: IAccountUrls = {
   github: {
     id: 'github',
     name: 'GitHub',
-    url: 'https://github.com/ladoijo',
+    url: ACCOUNT_GITHUB_URL,
     Icon: GitHubIcon
   },
   linkedin: {
     id: 'linkedin',
     name: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/hadyan-putra-yasrizal/',
+    url: ACCOUNT_LINKEDIN_URL,
     Icon: LinkedInIcon,
     placeholder: 'Hadyan Putra Yasrizal'
   },
   contra: {
     id: 'contra',
     name: 'Contra',
-    url: 'https://contra.com/hadyan_putra_yasrizal_q1sp6w4m?referralExperimentNid=SOCIAL_REFERRAL_PROGRAM&referrerUsername=hadyan_putra_yasrizal_q1sp6w4m',
+    url: ACCOUNT_CONTRA_URL,
     Icon: ContraIcon,
     placeholder: 'Hadyan Putra Yasrizal'
   },
   upwork: {
     id: 'upwork',
     name: 'UpWork',
-    url: 'https://www.upwork.com/freelancers/~01cf6d3fdb58b2256e?mp_source=share',
+    url: ACCOUNT_UPWORK_URL,
     Icon: UpworkIcon,
     placeholder: 'Hadyan Putra Yasrizal'
   },
   whatsapp: {
     id: 'whatsapp',
     name: 'WhatsApp',
-    url: 'https://wa.me/6287888515625',
+    url: ACCOUNT_WHATSAPP_URL,
     Icon: WhatsAppIcon,
     placeholder: '+62 878 8851 5625'
   },
   mail: {
     id: 'mail',
     name: 'Mail',
-    url: 'mailto:hadyanyasrizal@gmail.com',
+    url: 'mailto:' + ACCOUNT_MAIL,
     Icon: MailIcon,
     placeholder: 'hadyanyasrizal@gmail.com'
   },
   phone: {
     id: 'phone',
     name: 'Phone',
-    url: 'tel:+6287888515625',
+    url: 'tel:' + ACCOUNT_PHONE,
     Icon: PhoneIcon,
     placeholder: '+62 878 8851 5625'
   }
 };
 
-export const CVUrl =
-  'https://drive.google.com/uc?export=download&id=1phyU-cGQECdXUiMKhr-PSFnOSnNf9Dap';
-
 export const CertificateUrls: Record<string, string> = {
-  qsd: 'https://drive.google.com/file/d/1Ww3F8E2tFr71-io3F5l7svePCBX5hUyW/view?usp=sharing',
-  english: 'https://drive.google.com/file/d/1kFdNiW6b2Tft0cJ-l7oVdQnnh2s9TPc9/view?usp=sharing',
-  react: 'https://www.hackerrank.com/certificates/iframe/cf75903d445a'
+  qsd: CERTIFICATE_QSD_URL,
+  english: CERTIFICATE_ENGLISH_URL,
+  react: CERTIFICATE_REACT_URL
 };

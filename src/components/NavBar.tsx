@@ -3,7 +3,8 @@
 import BurgerIcon from '@/assets/icons/burger.svg';
 import CloseIcon from '@/assets/icons/close.svg';
 import { NavItem, NavItems } from '@/constants/NavItemsConst';
-import { AccountUrls, CVUrl } from '@/constants/UrlConst';
+import { AccountUrls } from '@/constants/UrlConst';
+import { FILE_RESUME_URL } from '@/utils/env';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useCallback, useEffect, useState } from 'react';
@@ -33,7 +34,7 @@ const NavBar = () => {
 
   const handleDownload = useCallback(() => {
     const anchor = document.createElement('a');
-    anchor.href = CVUrl;
+    anchor.href = FILE_RESUME_URL;
     anchor.download = 'hadyan_putra_yasrizal_cv.pdf';
     anchor.click();
   }, []);

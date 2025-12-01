@@ -8,6 +8,7 @@ import Toast from '@/components/Toast';
 import { NavItems } from '@/constants/NavItemsConst';
 import { AccountUrls } from '@/constants/UrlConst';
 import { EmailFormData, emailService } from '@/utils/email';
+import { GOOGLE_MAP_URL } from '@/utils/env';
 import { memo, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import ContactLink from './ContactLink';
@@ -285,7 +286,7 @@ const Contact = memo(() => {
               `}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=-6.9175,107.6191&z=13&output=embed"
+              src={GOOGLE_MAP_URL}
             />
           </div>
 

@@ -1,5 +1,6 @@
 import NavBar from '@/components/NavBar';
-import { siteConfig } from '@/constants/siteConfig';
+import { ACCOUNT_GITHUB_URL, ACCOUNT_LINKEDIN_URL } from '@/utils/env';
+import { siteConfig } from '@/utils/siteConfig';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
@@ -66,7 +67,7 @@ export default function RootLayout({
     url: siteConfig.siteUrl,
     image: siteConfig.ogImage,
     description: siteConfig.description,
-    sameAs: ['https://github.com/hadyanyasrizal', 'https://www.linkedin.com/in/hadyanyasrizal']
+    sameAs: [ACCOUNT_GITHUB_URL, ACCOUNT_LINKEDIN_URL]
   };
 
   return (
