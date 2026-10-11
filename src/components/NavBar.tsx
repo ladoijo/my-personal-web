@@ -40,11 +40,10 @@ const NavBar = () => {
   }, []);
 
   useEffect(() => {
-    const value = globalThis.location.hash.startsWith('#')
-      ? globalThis.location.hash.slice(1)
-      : activeSection;
-    handleNavItemClick(value);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const hash = window.location.hash.replace(/^#/, '');
+    if (hash) {
+      document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth' });
+    }
   }, []);
 
   return (

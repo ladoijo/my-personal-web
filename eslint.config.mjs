@@ -1,5 +1,7 @@
 import { FlatCompat } from '@eslint/eslintrc';
 import eslintParserTypeScript from '@typescript-eslint/parser';
+import nextCoreWebVitals from 'eslint-config-next/core-web-vitals';
+import nextTypescript from 'eslint-config-next/typescript';
 import eslintPluginBetterTailwindcss from 'eslint-plugin-better-tailwindcss';
 import eslintPluginValidateFilename from 'eslint-plugin-validate-filename';
 import { dirname } from 'path';
@@ -13,7 +15,9 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
-  ...compat.extends('next/core-web-vitals', 'next/typescript', 'plugin:prettier/recommended'),
+  ...nextCoreWebVitals,
+  ...nextTypescript,
+  ...compat.extends('plugin:prettier/recommended'),
   {
     files: ['**/*.{ts,tsx,cts,mts}'],
     ignores: ['src/app/robots.ts', 'src/app/sitemap.ts'],
